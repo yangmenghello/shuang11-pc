@@ -1,0 +1,2347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>双十一活动</title>
+
+<script src="http://a.tbcdn.cn/libs/jquery/1.7.1/jquery.js"></script>
+<script src="http://g.tbcdn.cn/??kissy/k/1.3.0/kissy-min.js,mui/seed/1.1.8/seed.js,mui/global/1.0.6/tml.js,mui/global/1.1.9/global.js,mui/header/1.1.9/header.js,kissy/k/1.3.0/suggest-min.js,kissy/k/1.3.0/switchable-min.js,kissy/k/1.3.0/datalazyload-min.js"></script>
+<script src="http://a.tbcdn.cn/p/snsdk/core.js"></script>
+
+<script>
+var version78=false;
+var browser=navigator.appName;
+var b_version=navigator.appVersion;
+var version=b_version.split(";");
+var trim_Version=version[1].replace(/[ ]/g,"");
+if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0"){
+	version78=true;
+}else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0"){
+	version78=true;
+}
+</script>
+
+<script>
+  var ua = "";
+  var UA_Opt = new Object;
+  UA_Opt.LogVal = "ua";
+  UA_Opt.MaxMCLog = 10;
+  UA_Opt.MaxMPLog = 10;
+  UA_Opt.MaxKSLog = 10;
+  UA_Opt.Token = new Date().getTime() + ":" + Math.random();
+  UA_Opt.SendMethod = 8;
+  UA_Opt.Flag = 16270;
+  function getUA() {
+    var tmp = ua;
+    UA_Opt.Token = new Date().getTime() + ":" + Math.random();
+    try {
+      UA_Opt.reload();
+    } catch (e) {}
+    return tmp;
+  }
+  </script> 
+<script src="http://uaction.aliyuncdn.com/js/ua.js"></script>
+
+<script type="text/javascript">
+//准备图片
+var pg = {};
+pg.totalNum=0;
+pg.loadNum=0;
+pg.rate = 1;
+pg.imagesFile="";//图片文件夹
+pg.soundOn = false;
+pg.imagesObjArr=["http://img03.taobaocdn.com/imgextra/i3/279887075/TB2zun_aFXXXXaxXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2W3cXaFXXXXXmXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Om7caFXXXXa1XXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2dov_aFXXXXX7XpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2NpIdaFXXXXaBXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2p5UgaFXXXXXmXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB26I2_aFXXXXaLXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2pD3XaFXXXXcrXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CkL_aFXXXXacXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CaQbaFXXXXb7XXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2V.MaaFXXXXcbXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Ujz9aFXXXXbuXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2HroaaFXXXXcPXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2jw7daFXXXXawXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2oKr.aFXXXXXMXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2JZZfaFXXXXXJXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB29H3faFXXXXXSXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2PGMXaFXXXXc_XXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2R4QgaFXXXXXpXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2mBr.aFXXXXXBXpXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2pRsaaFXXXXcbXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2VLocaFXXXXbcXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2.K6.aFXXXXX5XpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2RNwfaFXXXXXzXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2zgQdaFXXXXaHXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Xz3aaFXXXXbSXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2gnsaaFXXXXcgXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2AiIaaFXXXXcKXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB23168aFXXXXaWXpXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Pc.XaFXXXXcWXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2ckIbaFXXXXbKXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2KAr.aFXXXXXOXpXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB27Rj8aFXXXXa7XpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CiAaaFXXXXcAXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2kPn9aFXXXXaUXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2yakaaFXXXXczXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2DzZbaFXXXXbBXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2y3gbaFXXXXbSXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2wBkcaFXXXXaTXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2kkgaaFXXXXcdXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2m1EeaFXXXXX7XXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2hgwaaFXXXXcxXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2X17caFXXXXbiXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2kU3baFXXXXbAXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Hw2.aFXXXXXRXpXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB25sAdaFXXXXaSXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2HF.gaFXXXXXtXXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2ZlIaaFXXXXb8XXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2pjIaaFXXXXcjXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB22SkcaFXXXXa0XXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2a97baFXXXXbAXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2tmkbaFXXXXbFXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2buMdaFXXXXaMXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2EgIdaFXXXXaRXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2a87caFXXXXa8XXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2rDf_aFXXXXXUXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2lJY_aFXXXXaEXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2x.MdaFXXXXaaXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB297z.aFXXXXXPXpXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2yx6.aFXXXXXxXpXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2ap.daFXXXXaNXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Jt7eaFXXXXXZXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2a7n.aFXXXXXKXpXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2VO.daFXXXXaBXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2fngcaFXXXXa8XXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2MNZXaFXXXXXcXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB29PZbaFXXXXbvXXXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB2_zUdaFXXXXakXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2dcodaFXXXXaLXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2oZkXaFXXXXXXXpXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB26vv6aFXXXXbPXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2UHEaaFXXXXb5XXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2QmUXaFXXXXc3XXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2lIUdaFXXXXaKXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2.1b8aFXXXXbpXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Jk7caFXXXXbhXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB20tsdaFXXXXaZXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2e0wgaFXXXXXtXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB23WL.aFXXXXX1XpXXXXXXXXXX_!!279887075.png","http://img04.taobaocdn.com/imgextra/i4/279887075/TB214__aFXXXXaaXpXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2AQwaaFXXXXcrXXXXXXXXXXXX_!!279887075.png","http://img02.taobaocdn.com/imgextra/i2/279887075/TB2g9weaFXXXXXVXXXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2Ip7XaFXXXXXoXpXXXXXXXXXX_!!279887075.png","http://img01.taobaocdn.com/imgextra/i1/279887075/TB2FJMaaFXXXXc7XXXXXXXXXXXX_!!279887075.png","http://img03.taobaocdn.com/imgextra/i3/279887075/TB22VwdaFXXXXa3XXXXXXXXXXXX_!!279887075.jpg","http://img03.taobaocdn.com/imgextra/i3/279887075/TB2_cIaaFXXXXXaXpXXXXXXXXXX_!!279887075.jpg"];
+
+//context对象
+pg.contentBaseAttr = {
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+	
+    overflow:"hidden"
+};
+//背景
+pg.backBaseAttr = {
+    background : "bg",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 500*pg.rate+"px",
+    overflow:"hidden"
+};
+//背景图片组
+pg.backImg = {
+    "0":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2_cIaaFXXXXXaXpXXXXXXXXXX_!!279887075.jpg",
+    "1":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB22VwdaFXXXXa3XXXXXXXXXXXX_!!279887075.jpg"
+};
+//标题
+pg.titleBaseAttr = {
+    background : "title",
+    position   : "absolute",
+    top        : 7*pg.rate+"px",
+    left       : 570*pg.rate+"px",
+    width      : 774*pg.rate+"px",
+    height     : 78*pg.rate+"px",
+    overflow:"hidden"
+};
+//底部说明
+pg.downBaseAttr = {
+    background : "down",
+    position   : "absolute",
+    top        : 451*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 49*pg.rate+"px",
+    overflow:"hidden"
+};
+//底部说明图片组
+pg.downImg = {
+    "0":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB29PZbaFXXXXbvXXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2MNZXaFXXXXXcXpXXXXXXXXXX_!!279887075.png"
+};
+
+//流星1
+pg.liuXingBaseAttr1 = {
+    background : "xi001",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 276*pg.rate+"px",
+    height     : 276*pg.rate+"px",
+    overflow:"hidden"
+};
+//流星2
+pg.liuXingBaseAttr2 = {
+    background : "xi002",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 108*pg.rate+"px",
+    height     : 108*pg.rate+"px",
+    overflow:"hidden"
+};
+//流星3
+pg.liuXingBaseAttr3 = {
+    background : "xi003",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 247*pg.rate+"px",
+    height     : 247*pg.rate+"px",
+    overflow:"hidden"
+};
+//流星4
+pg.liuXingBaseAttr4 = {
+    background : "xi004",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 108*pg.rate+"px",
+    height     : 108*pg.rate+"px",
+    overflow:"hidden"
+};
+
+
+//品牌kids
+pg.kidsBaseAttr1 = {
+    background : "kids1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 83*pg.rate+"px",
+    height     : 83*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕kids
+pg.kidsBaseAttr2 = {
+    background : "kids2",
+    position   : "absolute",
+    top        : 195*pg.rate+"px",
+    left       : 422*pg.rate+"px",
+    width      : 107*pg.rate+"px",
+    height     : 107*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌yolann
+pg.yolannBaseAttr1 = {
+    background : "yolann1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 116*pg.rate+"px",
+    height     : 115*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕yolann
+pg.yolannBaseAttr2 = {
+    background : "yolann2",
+    position   : "absolute",
+    top        : 79*pg.rate+"px",
+    left       : 556*pg.rate+"px",
+    width      : 139*pg.rate+"px",
+    height     : 139*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌lljf
+pg.lljfBaseAttr1 = {
+    background : "lljf1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 157*pg.rate+"px",
+    height     : 156*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕lljf
+pg.lljfBaseAttr2 = {
+    background : "lljf2",
+    position   : "absolute",
+    top        : 236*pg.rate+"px",
+    left       : 679*pg.rate+"px",
+    width      : 181*pg.rate+"px",
+    height     : 180*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌lacasa
+pg.lacasaBaseAttr1 = {
+    background : "lacasa1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 88*pg.rate+"px",
+    height     : 88*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕lacasa
+pg.lacasaBaseAttr2 = {
+    background : "lacasa2",
+    position   : "absolute",
+    top        : 94*pg.rate+"px",
+    left       : 770*pg.rate+"px",
+    width      : 112*pg.rate+"px",
+    height     : 112*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌saintmarc
+pg.saintmarcBaseAttr1 = {
+    background : "Saintmarc1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 115*pg.rate+"px",
+    height     : 114*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕saintmarc
+pg.saintmarcBaseAttr2 = {
+    background : "Saintmarc2",
+    position   : "absolute",
+    top        : 294*pg.rate+"px",
+    left       : 994*pg.rate+"px",
+    width      : 138*pg.rate+"px",
+    height     : 138*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌Christy
+pg.ChristyBaseAttr1 = {
+    background : "Christy1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 80*pg.rate+"px",
+    height     : 80*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕Christy
+pg.ChristyBaseAttr2 = {
+    background : "Christy2",
+    position   : "absolute",
+    top        : 136*pg.rate+"px",
+    left       : 1262*pg.rate+"px",
+    width      : 104*pg.rate+"px",
+    height     : 104*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌lovo
+pg.lovoBaseAttr1 = {
+    background : "lovo1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 143*pg.rate+"px",
+    height     : 143*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕lovo
+pg.lovoBaseAttr2 = {
+    background : "lovo2",
+    position   : "absolute",
+    top        : 90*pg.rate+"px",
+    left       : 1056*pg.rate+"px",
+    width      : 167*pg.rate+"px",
+    height     : 167*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌ZUCCHI
+pg.ZUCCHIBaseAttr1 = {
+    background : "ZUCCHI1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 103*pg.rate+"px",
+    height     : 103*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕ZUCCHI
+pg.ZUCCHIBaseAttr2 = {
+    background : "ZUCCHI2",
+    position   : "absolute",
+    top        : 277*pg.rate+"px",
+    left       : 1198*pg.rate+"px",
+    width      : 127*pg.rate+"px",
+    height     : 127*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌disnep
+pg.disnepBaseAttr1 = {
+    background : "disnep1",
+    position   : "absolute",
+    top        : 12*pg.rate+"px",
+    left       : 12*pg.rate+"px",
+    width      : 88*pg.rate+"px",
+    height     : 88*pg.rate+"px",
+    overflow:"hidden"
+};
+//品牌光晕disnep
+pg.disnepBaseAttr2 = {
+    background : "disnep2",
+    position   : "absolute",
+    top        : 298*pg.rate+"px",
+    left       : 494*pg.rate+"px",
+    width      : 112*pg.rate+"px",
+    height     : 112*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//品牌口号
+pg.ppKouHaoBaseAttr = {
+    background : "kids5",
+    position   : "absolute",
+    top        : 292*pg.rate+"px",
+    left       : 380*pg.rate+"px",
+    width      : 230*pg.rate+"px",
+    height     : 22*pg.rate+"px",
+    overflow:"hidden"
+};
+//详细说明图片组
+pg.ppKouHaoImg = {
+    "0":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2buMdaFXXXXaMXXXXXXXXXXXX_!!279887075.png",
+	"1":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2_zUdaFXXXXakXXXXXXXXXXXX_!!279887075.png",
+    "2":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CkL_aFXXXXacXpXXXXXXXXXX_!!279887075.png",
+    "3":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2hgwaaFXXXXcxXXXXXXXXXXXX_!!279887075.png",
+    "4":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2HF.gaFXXXXXtXXXXXXXXXXXX_!!279887075.png",
+    "5":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Pc.XaFXXXXcWXXXXXXXXXXXX_!!279887075.png",
+	"6":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2kPn9aFXXXXaUXpXXXXXXXXXX_!!279887075.png",
+	"7":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Om7caFXXXXa1XXXXXXXXXXXX_!!279887075.png",
+    "8":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2QmUXaFXXXXc3XXXXXXXXXXXX_!!279887075.png"
+};
+
+//透明背景
+pg.alphaBgBaseAttr = {
+    background : "bg2",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 500*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//详细说明
+pg.xxHelpBaseAttr = {
+    background : "kids3",
+    position   : "absolute",
+    top        : 54*pg.rate+"px",
+    left       : 1038*pg.rate+"px",
+    width      : 405*pg.rate+"px",
+    height     : 405*pg.rate+"px",
+    overflow:"hidden"
+};
+//详细说明图片组
+pg.xxHelpImg = {
+    "0":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2a87caFXXXXa8XXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2V.MaaFXXXXcbXXXXXXXXXXXX_!!279887075.png",
+    "2":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2kU3baFXXXXbAXXXXXXXXXXXX_!!279887075.png",
+    "3":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2pjIaaFXXXXcjXXXXXXXXXXXX_!!279887075.png",
+    "4":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2KAr.aFXXXXXOXpXXXXXXXXXX_!!279887075.png",
+    "5":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2.1b8aFXXXXbpXpXXXXXXXXXX_!!279887075.png",
+    "6":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2DzZbaFXXXXbBXXXXXXXXXXXX_!!279887075.png",
+    "7":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2NpIdaFXXXXaBXXXXXXXXXXXX_!!279887075.png",
+    "8":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2oZkXaFXXXXXXXpXXXXXXXXXX_!!279887075.png"
+};
+//详细说明抢红包按钮
+pg.btnHelpBaseAttr = {
+    background : "btn1",
+    position   : "absolute",
+    top        : 250*pg.rate+"px",
+    left       : 131*pg.rate+"px",
+    width      : 143*pg.rate+"px",
+    height     : 143*pg.rate+"px",
+    overflow:"hidden"
+};
+//详细说明抢红包按钮图片组
+pg.btnHelpImg = {
+    "0":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2Ip7XaFXXXXXoXpXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2g9weaFXXXXXVXXXXXXXXXXXX_!!279887075.png"
+};
+
+
+//捕星星五星
+pg.gameWuXingBaseAttr = {
+    background : "wuxi1",
+    position   : "absolute",
+    top        : 462*pg.rate+"px",
+    left       : 686*pg.rate+"px",
+    width      : 30*pg.rate+"px",
+    height     : 28*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星五星图片组
+pg.gameWuXingImg = {
+    "0":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2.K6.aFXXXXX5XpXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2VLocaFXXXXbcXXXXXXXXXXXX_!!279887075.png"
+};
+
+//捕星星品牌图片
+pg.ppImagesBaseAttr = {
+    background : "kids4",
+    position   : "absolute",
+    top        : 206*pg.rate+"px",
+    left       : 990*pg.rate+"px",
+    width      : 567*pg.rate+"px",
+    height     : 296*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星品牌图片组
+pg.ppImagesImg = {
+    "0":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2EgIdaFXXXXaRXXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CaQbaFXXXXb7XXXXXXXXXXXX_!!279887075.png",
+    "2":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2X17caFXXXXbiXXXXXXXXXXXX_!!279887075.png",
+    "3":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2ZlIaaFXXXXb8XXXXXXXXXXXX_!!279887075.png",
+    "4":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2ckIbaFXXXXbKXXXXXXXXXXXX_!!279887075.png",
+    "5":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2lIUdaFXXXXaKXXXXXXXXXXXX_!!279887075.png",
+    "6":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2yakaaFXXXXczXXXXXXXXXXXX_!!279887075.png",
+    "7":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2dov_aFXXXXX7XpXXXXXXXXXX_!!279887075.png",
+    "8":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2dcodaFXXXXaLXXXXXXXXXXXX_!!279887075.png"
+};
+//捕星星进度边框
+pg.gameLoadBaseAttr1 = {
+    background : "loading1",
+    position   : "absolute",
+    top        : 428*pg.rate+"px",
+    left       : 484*pg.rate+"px",
+    width      : 271*pg.rate+"px",
+    height     : 10*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星进度条
+pg.gameLoadBaseAttr2 = {
+    background : "loading2",
+    position   : "absolute",
+    top        : 428*pg.rate+"px",
+    left       : 484*pg.rate+"px",
+    width      : 271*pg.rate+"px",
+    height     : 10*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星时间
+pg.gameLoadTimeBaseAttr = {
+    background : "kong",
+    position   : "absolute",
+    top        : 423*pg.rate+"px",
+    left       : 763*pg.rate+"px",
+    width      : 271*pg.rate+"px",
+    height     : 20*pg.rate+"px",
+    overflow:"hidden"
+};
+//中奖金额
+pg.gameMoneyBaseAttr = {
+    background : "kong",
+    position   : "absolute",
+    top        : 196*pg.rate+"px",
+    left       : 898*pg.rate+"px",
+    width      : 110*pg.rate+"px",
+    height     : 60*pg.rate+"px",
+    overflow:"hidden"
+};
+//中奖手机提醒
+pg.gamePhoneBaseAttr = {
+    position   : "absolute",
+    top        : 240*pg.rate+"px",
+    left       : 871*pg.rate+"px",
+    width      : 181*pg.rate+"px",
+    height     : 32*pg.rate+"px",
+    color:"#000000"
+};
+
+//捕星星时间
+pg.gameLoadTimeBaseAttr = {
+    background : "kong",
+    position   : "absolute",
+    top        : 423*pg.rate+"px",
+    left       : 763*pg.rate+"px",
+    width      : 271*pg.rate+"px",
+    height     : 20*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星手
+pg.gameHandBaseAttr = {
+    background : "hand1",
+    position   : "absolute",
+    top        : 428*pg.rate+"px",
+    left       : 484*pg.rate+"px",
+    width      : 85*pg.rate+"px",
+    height     : 78*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星手图片组
+pg.gameHandImg = {
+    "0":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB297z.aFXXXXXPXpXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2x.MdaFXXXXaaXXXXXXXXXXXX_!!279887075.png"
+};
+
+//捕星星_星星
+pg.gameZuaXingBaseAttr = {
+    background : "zuaXing",
+    position   : "absolute",
+    top        : 428*pg.rate+"px",
+    left       : 484*pg.rate+"px",
+    width      : 321*pg.rate+"px",
+    height     : 276*pg.rate+"px",
+    overflow:"hidden"
+};
+
+//捕星星_烟花
+pg.yanHua1BaseAttr = {
+    background : "yanHua1",
+    position   : "absolute",
+    top        : 75*pg.rate+"px",
+    left       : 743*pg.rate+"px",
+    width      : 183*pg.rate+"px",
+    height     : 177*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星_烟花2
+pg.yanHua2BaseAttr = {
+    background : "yanHua2",
+    position   : "absolute",
+    top        : 92*pg.rate+"px",
+    left       : 1020*pg.rate+"px",
+    width      : 139*pg.rate+"px",
+    height     : 155*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星_烟花3
+pg.yanHua3BaseAttr = {
+    background : "yanHua3",
+    position   : "absolute",
+    top        : 275*pg.rate+"px",
+    left       : 815*pg.rate+"px",
+    width      : 122*pg.rate+"px",
+    height     : 128*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星_烟花4
+pg.yanHua4BaseAttr = {
+    background : "yanHua4",
+    position   : "absolute",
+    top        : 250*pg.rate+"px",
+    left       : 980*pg.rate+"px",
+    width      : 187*pg.rate+"px",
+    height     : 177*pg.rate+"px",
+    overflow:"hidden"
+};
+
+
+//捕星星_星星触控
+pg.gameZuaXingKongBaseAttr = {
+    background : "kong",
+    position   : "absolute",
+    top        : 210*pg.rate+"px",
+    left       : 18*pg.rate+"px",
+    width      : 48*pg.rate+"px",
+    height     : 46*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星使用提醒
+pg.gameOverSytxBaseAttr = {
+    background : "gameover4",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 500*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星成功
+pg.gameOverCGBaseAttr = {
+    background : "gameover1",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 500*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星失败
+pg.gameOverSBBaseAttr = {
+    background : "gameover2",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 500*pg.rate+"px",
+    overflow:"hidden"
+};
+pg.gameOverSBImg = {
+    "0":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Jt7eaFXXXXXZXXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB2ap.daFXXXXaNXXXXXXXXXXXX_!!279887075.png"
+};
+
+//捕星星开始
+pg.gameStartBaseAttr = {
+    background : "start",
+    position   : "absolute",
+    top        : 0*pg.rate+"px",
+    left       : 0*pg.rate+"px",
+    width      : 1920*pg.rate+"px",
+    height     : 500*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星失败_再玩一次
+pg.gameZwycBaseAttr = {
+    background : "zwyc1",
+    position   : "absolute",
+    top        : 281*pg.rate+"px",
+    left       : 883*pg.rate+"px",
+    width      : 158*pg.rate+"px",
+    height     : 40*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星失败_再玩一次图片组
+pg.gameZwycImg = {
+    "0":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2W3cXaFXXXXXmXpXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2zun_aFXXXXaxXpXXXXXXXXXX_!!279887075.png"
+};
+//捕星星失败_分享微博
+pg.gameFxwbBaseAttr = {
+    background : "fxwb1",
+    position   : "absolute",
+    top        : 327*pg.rate+"px",
+    left       : 883*pg.rate+"px",
+    width      : 158*pg.rate+"px",
+    height     : 40*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星失败_分享微博图片组
+pg.gameFxwbImg = {
+    "0":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2fngcaFXXXXa8XXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2VO.daFXXXXaBXXXXXXXXXXXX_!!279887075.png"
+};
+//捕星星成功_使用提醒
+pg.gameCGSytxBaseAttr = {
+    background : "cgSytx1",
+    position   : "absolute",
+    top        : 267*pg.rate+"px",
+    left       : 887.5*pg.rate+"px",
+    width      : 144*pg.rate+"px",
+    height     : 42*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星成功_再玩一次图片组
+pg.gameCGSytxImg = {
+    "0":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB23WL.aFXXXXX1XpXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2e0wgaFXXXXXtXXXXXXXXXXXX_!!279887075.png"
+};
+//捕星星成功_分享微博
+pg.gameCGFxwbBaseAttr = {
+    background : "cgFxwb1",
+    position   : "absolute",
+    top        : 320*pg.rate+"px",
+    left       : 887.5*pg.rate+"px",
+    width      : 144*pg.rate+"px",
+    height     : 42*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星成功_分享微博图片组
+pg.gameCGFxwbImg = {
+    "0":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2AQwaaFXXXXcrXXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img04.taobaocdn.com/imgextra/i4/279887075/TB214__aFXXXXaaXpXXXXXXXXXX_!!279887075.png"
+};
+//捕星星star_开始捕星星
+pg.gameStartBtnBaseAttr = {
+    background : "startBtn1",
+    position   : "absolute",
+    top        : 300*pg.rate+"px",
+    left       : 887.5*pg.rate+"px",
+    width      : 144*pg.rate+"px",
+    height     : 42*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星星star_开始捕星星图片组
+pg.gameStartBtnImg = {
+    "0":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Xz3aaFXXXXbSXXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img01.taobaocdn.com/imgextra/i1/279887075/TB2zgQdaFXXXXaHXXXXXXXXXXXX_!!279887075.png"
+};
+//捕星星使用提醒_发送;
+pg.gameSytxSendBaseAttr = {
+    background : "send1",
+    position   : "absolute",
+    top        : 298*pg.rate+"px",
+    left       : 900*pg.rate+"px",
+    width      : 120*pg.rate+"px",
+    height     : 38*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星星star_开始捕星星图片组
+pg.gameSytxSendImg = {
+    "0":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB23168aFXXXXaWXpXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2AiIaaFXXXXcKXXXXXXXXXXXX_!!279887075.png"
+};
+
+
+/**
+ * 节点获取
+ */
+function $(id) {
+    return document.getElementById(id);
+}//定位节点
+/**
+ * 加入div节点 或img节点
+ */
+var ele = {
+    div : function (){
+        document.createElement("div");
+    },
+    objSpan : function (BaseAttr){
+        var sp1 = document.createElement("div");
+        var sp2 = document.createElement("img");
+        for(var s in BaseAttr) {
+            if (s === "background"){
+				if(BaseAttr[s]=="zwyc2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2zun_aFXXXXaxXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="zwyc1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2W3cXaFXXXXXmXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="ZUCCHI5"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Om7caFXXXXa1XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="ZUCCHI4"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2dov_aFXXXXX7XpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="ZUCCHI3"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2NpIdaFXXXXaBXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="ZUCCHI2"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2p5UgaFXXXXXmXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="ZUCCHI1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB26I2_aFXXXXaLXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="zuaXing"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2pD3XaFXXXXcrXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yolann5"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CkL_aFXXXXacXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yolann4"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CaQbaFXXXXb7XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yolann3"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2V.MaaFXXXXcbXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yolann2"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Ujz9aFXXXXbuXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yolann1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2HroaaFXXXXcPXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yanHua4"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2jw7daFXXXXawXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yanHua3"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2oKr.aFXXXXXMXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yanHua2"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2JZZfaFXXXXXJXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="yanHua1"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB29H3faFXXXXXSXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="xi004"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2PGMXaFXXXXc_XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="xi003"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2R4QgaFXXXXXpXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="xi002"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2mBr.aFXXXXXBXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="xi001"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2pRsaaFXXXXcbXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="wuxi2"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2VLocaFXXXXbcXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="wuxi1"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2.K6.aFXXXXX5XpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="title"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2RNwfaFXXXXXzXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="startBtn2"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2zgQdaFXXXXaHXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="startBtn1"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Xz3aaFXXXXbSXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="start"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2gnsaaFXXXXcgXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="send2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2AiIaaFXXXXcKXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="send1"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB23168aFXXXXaWXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Saintmarc5"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Pc.XaFXXXXcWXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Saintmarc4"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2ckIbaFXXXXbKXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Saintmarc3"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2KAr.aFXXXXXOXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Saintmarc2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB27Rj8aFXXXXa7XpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Saintmarc1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2CiAaaFXXXXcAXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lovo5"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2kPn9aFXXXXaUXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lovo4"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2yakaaFXXXXczXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lovo3"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2DzZbaFXXXXbBXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lovo2"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2y3gbaFXXXXbSXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lovo1"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2wBkcaFXXXXaTXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="loading2"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2kkgaaFXXXXcdXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="loading1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2m1EeaFXXXXX7XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lljf5"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2hgwaaFXXXXcxXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lljf4"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2X17caFXXXXbiXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lljf3"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2kU3baFXXXXbAXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lljf2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2Hw2.aFXXXXXRXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lljf1"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB25sAdaFXXXXaSXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lacasa5"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2HF.gaFXXXXXtXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lacasa4"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2ZlIaaFXXXXb8XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lacasa3"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2pjIaaFXXXXcjXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lacasa2"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB22SkcaFXXXXa0XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="lacasa1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2a97baFXXXXbAXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="kong"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2tmkbaFXXXXbFXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="kids5"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2buMdaFXXXXaMXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="kids4"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2EgIdaFXXXXaRXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="kids3"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2a87caFXXXXa8XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="kids2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2rDf_aFXXXXXUXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="kids1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2lJY_aFXXXXaEXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="hand2"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2x.MdaFXXXXaaXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="hand1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB297z.aFXXXXXPXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="gameover4"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2yx6.aFXXXXXxXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="gameover3"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2ap.daFXXXXaNXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="gameover2"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Jt7eaFXXXXXZXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="gameover1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2a7n.aFXXXXXKXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="fxwb2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2VO.daFXXXXaBXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="fxwb1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2fngcaFXXXXa8XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="down1"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2MNZXaFXXXXXcXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="down"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB29PZbaFXXXXbvXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="disnep5"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2_zUdaFXXXXakXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="disnep4"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2dcodaFXXXXaLXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="disnep3"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2oZkXaFXXXXXXXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="disnep2"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB26vv6aFXXXXbPXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="disnep1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2UHEaaFXXXXb5XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Christy5"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2QmUXaFXXXXc3XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Christy4"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2lIUdaFXXXXaKXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Christy3"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2.1b8aFXXXXbpXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Christy2"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2Jk7caFXXXXbhXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Christy1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB20tsdaFXXXXaZXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="cgSytx2"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2e0wgaFXXXXXtXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="cgSytx1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB23WL.aFXXXXX1XpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="cgFxwb2"){
+					sp2.setAttribute("src", "http://img04.taobaocdn.com/imgextra/i4/279887075/TB214__aFXXXXaaXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="cgFxwb1"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2AQwaaFXXXXcrXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="btn2"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2g9weaFXXXXXVXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="btn1"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2Ip7XaFXXXXXoXpXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="bg2"){
+					sp2.setAttribute("src", "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2FJMaaFXXXXc7XXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="bg1"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB22VwdaFXXXXa3XXXXXXXXXXXX_!!279887075.jpg");
+				}else if(BaseAttr[s]=="bg"){
+					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2_cIaaFXXXXXaXpXXXXXXXXXX_!!279887075.jpg");
+				}
+				/*
+				if(BaseAttr[s]=="bg"){
+					sp2.setAttribute("src", pg.imagesFile+"/"+BaseAttr[s]+".jpg");
+				}else{
+					sp2.setAttribute("src", pg.imagesFile+"/"+BaseAttr[s]+".png");
+				}
+				*/
+            }
+            else
+            {
+                if(s === "width" || s === "height")
+                {
+                    sp2.setAttribute(s, BaseAttr[s]);
+                }
+                sp1.style[s] = BaseAttr[s];
+            }
+        }
+        sp1.appendChild(sp2);
+        return sp1;
+    }
+};
+
+
+//载入loading
+function loading(){
+	
+	//网页可视区域度高
+    var screenWidth=document.documentElement.offsetWidth;
+    var screenHeight=500;//document.body.clientHeight;
+	window.screenWidth=screenWidth;
+	window.screenHeight=screenHeight;
+	
+	var aaStype = {
+		position:"absolute",
+		left:(screenWidth/2)*pg.rate+"px",
+		top:(screenHeight/2-12)*pg.rate+"px",
+		"font-size":24*pg.rate+"px",
+		color:"#ffffff",
+		padding:10*pg.rate+"px"
+	};
+	for(var s in aaStype) {
+		$("load").style[s] = aaStype[s];
+	}
+	$("load").style.left=((screenWidth-$("load").offsetWidth)/2)+"px";
+	var l=0;
+    var sum=pg.imagesObjArr.length;
+    var imgs=[];
+	pg.totalNum=pg.imagesObjArr.length;
+    //var createDiv=document.createElement("div");
+    //document.body.appendChild(createDiv);
+    if (document.images){
+		for(i=0;i<pg.imagesObjArr.length;i++){
+			imgs[i]=new Image();
+            imgs[i].src=pg.imagesObjArr[i];
+			
+		if (imgs[i].complete) {
+			chk();
+		} else {
+			imgs[i].onload = function () {
+				chk();
+			};
+		};
+			
+		}
+	}
+	//sum=l=imgs.length;
+	
+	
+	
+	
+}
+
+//载入图片后返回函数
+function chk(){
+	pg.loadNum++;
+	var n=Math.floor((pg.loadNum/pg.totalNum)*100);
+	//alert(pg.loadNum+","+pg.totalNum+","+n);
+    $("load").innerText="loading: "+n+"%";
+	$("load").textContent="loading: "+n+"%";
+	$("load").style.left=((screenWidth-$("load").offsetWidth)/2)+"px";
+    if (n==100){
+		$("load").style.display = "none";
+        Game();
+    }
+}
+//游戏主函数
+function Game(){
+	var yanHuaNum=201;
+	var kouHaoNum=0;
+	var kouHaoArrX=[380,464,518,668,735,963,1052,1150,1228];
+	var kouHaoArrY=[292,400,207,406,196,422,247,393,230];
+	
+	var cpUrl="";//产品链接;
+	var gameTime=0;//游戏时间;
+	var pzxxNum=0;//捕到的星星数;
+	var xxHelpNum=0;
+	var selectNum=0;
+	var mouseX=0;
+	var mouseY=0;
+	var content = $("content");
+	//content属性设置;
+    for(var s in pg.contentBaseAttr) {
+        content.style[s] = pg.contentBaseAttr[s];
+    }
+	content.style.width=(screenWidth)+"px";
+	content.style.height=(screenHeight)+"px";
+    //以下为首页;
+	//添加背景;
+    var contentB = ele.objSpan(pg.backBaseAttr);
+    content.appendChild(contentB);
+	contentB.style.left=((screenWidth-contentB.offsetWidth)/2)+"px";
+	contentB.onmousedown = function (event){
+        if(xxHelp.style.display=="block"&&xxHelpNum==20){
+			xxHelpNum=40;
+			//xxHelp.style.display="none";
+		}
+		
+    }
+	contentB.onmousemove = function (event){
+		//alert(mouseX+","+mouseY);
+		event= event || window.event; 
+        mouseX=event.clientX;
+		mouseY=event.clientY;
+		
+    }
+	
+	
+	//游戏添加品牌产品图片
+    var gamePpImages = ele.objSpan(pg.ppImagesBaseAttr);
+    contentB.appendChild(gamePpImages);
+	gamePpImages.style.display="none";
+	
+	//流星
+	var liuXing1=ele.objSpan(pg.liuXingBaseAttr1);
+    contentB.appendChild(liuXing1);
+	liuXing1.style.left=(Math.floor(Math.random()*200)+650)+"px";
+	liuXing1.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing2=ele.objSpan(pg.liuXingBaseAttr2);
+    contentB.appendChild(liuXing2);
+	liuXing2.style.left=(Math.floor(Math.random()*200)+850)+"px";
+	liuXing2.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing3=ele.objSpan(pg.liuXingBaseAttr3);
+    contentB.appendChild(liuXing3);
+	liuXing3.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+	liuXing3.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing4=ele.objSpan(pg.liuXingBaseAttr4);
+    contentB.appendChild(liuXing4);
+	liuXing4.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+	liuXing4.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing5=ele.objSpan(pg.liuXingBaseAttr1);
+    contentB.appendChild(liuXing5);
+	liuXing5.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+	liuXing5.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing6=ele.objSpan(pg.liuXingBaseAttr2);
+    contentB.appendChild(liuXing6);
+	liuXing6.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+	liuXing6.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing7=ele.objSpan(pg.liuXingBaseAttr3);
+    contentB.appendChild(liuXing7);
+	liuXing7.style.left=(Math.floor(Math.random()*200)+850)+"px";
+	liuXing7.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var liuXing8=ele.objSpan(pg.liuXingBaseAttr4);
+    contentB.appendChild(liuXing8);
+	liuXing8.style.left=(Math.floor(Math.random()*200)+650)+"px";
+	liuXing8.style.top=(Math.floor(Math.random()*400))+"px";
+	
+	var gameZuaXing1=ele.objSpan(pg.gameZuaXingBaseAttr);
+    contentB.appendChild(gameZuaXing1);
+	gameZuaXing1.style.display="none";
+	
+	var gameZuaXing2=ele.objSpan(pg.gameZuaXingBaseAttr);
+    contentB.appendChild(gameZuaXing2);
+	gameZuaXing2.style.display="none";
+	
+	var gameZuaXing3=ele.objSpan(pg.gameZuaXingBaseAttr);
+    contentB.appendChild(gameZuaXing3);
+	gameZuaXing3.style.display="none";
+	
+	var gameZuaXing4=ele.objSpan(pg.gameZuaXingBaseAttr);
+    contentB.appendChild(gameZuaXing4);
+	gameZuaXing4.style.display="none";
+	
+	var gameZuaXing5=ele.objSpan(pg.gameZuaXingBaseAttr);
+    contentB.appendChild(gameZuaXing5);
+	gameZuaXing5.style.display="none";
+	
+	//游戏添加手
+    var gameHand = ele.objSpan(pg.gameHandBaseAttr);
+    contentB.appendChild(gameHand);
+	gameHand.style.display="none";
+	gameHand.onmousedown=function(event){
+		//判断捕捉
+		gameHand.childNodes[0].src=pg.gameHandImg[1];
+		var x1=mouseX-contentB.offsetLeft;
+		var y1=mouseY;
+		if(x1>(gameZuaXing1.offsetLeft+18)&&x1<(gameZuaXing1.offsetLeft+66)&&y1>(gameZuaXing1.offsetTop+210)&&y1<(gameZuaXing1.offsetTop+256)){
+			gameZuaXing1.style.left=(Math.floor(Math.random()*200)+650)+"px";
+			gameZuaXing1.style.top=(-gameZuaXing1.offsetHeight)+"px";
+			getXingXing();
+			return;
+		}
+		if(x1>(gameZuaXing2.offsetLeft+18)&&x1<(gameZuaXing2.offsetLeft+66)&&y1>(gameZuaXing2.offsetTop+210)&&y1<(gameZuaXing2.offsetTop+256)){
+			gameZuaXing2.style.left=(Math.floor(Math.random()*200)+850)+"px";
+			gameZuaXing2.style.top=(-gameZuaXing1.offsetHeight)+"px";
+			getXingXing();
+			return;
+		}
+		if(x1>(gameZuaXing3.offsetLeft+18)&&x1<(gameZuaXing3.offsetLeft+66)&&y1>(gameZuaXing3.offsetTop+210)&&y1<(gameZuaXing3.offsetTop+256)){
+			gameZuaXing3.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+			gameZuaXing3.style.top=(-gameZuaXing1.offsetHeight)+"px";
+			getXingXing();
+			return;
+		}
+		if(x1>(gameZuaXing4.offsetLeft+18)&&x1<(gameZuaXing4.offsetLeft+66)&&y1>(gameZuaXing4.offsetTop+210)&&y1<(gameZuaXing4.offsetTop+256)){
+			gameZuaXing4.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+			gameZuaXing4.style.top=(-gameZuaXing1.offsetHeight)+"px";
+			getXingXing();
+			return;
+		}
+		if(x1>(gameZuaXing5.offsetLeft+18)&&x1<(gameZuaXing5.offsetLeft+66)&&y1>(gameZuaXing5.offsetTop+210)&&y1<(gameZuaXing5.offsetTop+256)){
+			gameZuaXing5.style.left=(Math.floor(Math.random()*200)+1450)+"px";
+			gameZuaXing5.style.top=(-gameZuaXing1.offsetHeight)+"px";
+			getXingXing();
+			return;
+		}
+		
+	}
+	gameHand.onmouseup=function(event){
+		gameHand.childNodes[0].src=pg.gameHandImg[0];
+	}
+	
+	//添加标题
+    var cTitle = ele.objSpan(pg.titleBaseAttr);
+    contentB.appendChild(cTitle);
+	
+	//添加底部说明
+    var cDown = ele.objSpan(pg.downBaseAttr);
+    contentB.appendChild(cDown);
+	//游戏添加五星1
+    var gameWuXing1 = ele.objSpan(pg.gameWuXingBaseAttr);
+    contentB.appendChild(gameWuXing1);
+	
+	//游戏添加五星1
+    var gameWuXing2 = ele.objSpan(pg.gameWuXingBaseAttr);
+    contentB.appendChild(gameWuXing2);
+	gameWuXing2.style.left=(gameWuXing1.offsetLeft+40)+"px";
+	//游戏添加五星1
+    var gameWuXing3 = ele.objSpan(pg.gameWuXingBaseAttr);
+    contentB.appendChild(gameWuXing3);
+	gameWuXing3.style.left=(gameWuXing2.offsetLeft+40)+"px";
+	gameWuXing1.style.display="none";
+	gameWuXing2.style.display="none";
+	gameWuXing3.style.display="none";
+	
+	//游戏添进度条底
+    var gameLoad1 = ele.objSpan(pg.gameLoadBaseAttr1);
+    contentB.appendChild(gameLoad1);
+	gameLoad1.style.display="none";
+	//游戏添进度条
+    var gameLoad2 = ele.objSpan(pg.gameLoadBaseAttr2);
+    contentB.appendChild(gameLoad2);
+	gameLoad2.style.display="none";
+	//游戏添进度时间
+    var gameLoadTime = ele.objSpan(pg.gameLoadTimeBaseAttr);
+    contentB.appendChild(gameLoadTime);
+	gameLoadTime.style.color="#ffffff";
+	gameLoadTime.style.display="none";
+	gameLoadTime.innerText="";
+	gameLoadTime.textContent="";
+	
+	
+	//品牌图标kids
+	var ppKids = ele.objSpan(pg.kidsBaseAttr2);
+    contentB.appendChild(ppKids);
+	var ppKids1 = ele.objSpan(pg.kidsBaseAttr1);
+    contentB.appendChild(ppKids1);
+	ppKids1.style.left=ppKids.offsetLeft+12+"px";
+	ppKids1.style.top=ppKids.offsetTop+12+"px";
+	ppKids1.onmouseover=function(event){
+		ppKids1.style.cursor = "pointer";
+		ppKidsNum=0;
+    }
+    ppKids1.onmouseout=function(event){
+		ppKids1.style.cursor = "default";
+		ppKidsNum=21;
+    }
+    ppKids1.onmousedown = function (event){
+        showXxHelp();
+		//xxHelp.style.left="527px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[0];
+		selectNum=0
+		cpUrl="http://luolai.tmall.com/search.htm?orderType=&viewType=grid&keyword=kids&lowPrice=&highPrice=";
+    }
+	
+	//品牌图标yolann
+	var ppYolann = ele.objSpan(pg.yolannBaseAttr2);
+    contentB.appendChild(ppYolann);
+	var ppYolann1 = ele.objSpan(pg.yolannBaseAttr1);
+    contentB.appendChild(ppYolann1);
+	ppYolann1.style.left=ppYolann.offsetLeft+12+"px";
+	ppYolann1.style.top=ppYolann.offsetTop+12+"px";
+	ppYolann1.onmouseover=function(event){
+		ppYolann1.style.cursor = "pointer";
+		ppYolannNum=0;
+    }
+    ppYolann1.onmouseout=function(event){
+		ppYolann1.style.cursor = "default";
+		ppYolannNum=21;
+    }
+    ppYolann1.onmousedown = function (event){
+        
+		//xxHelp.style.left="683px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[1];
+		selectNum=1;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/category.htm?orderType=&viewType=grid&keyword=%C5%B7%C1%B5%C4%C9&lowPrice=&highPrice=";
+    }
+	
+	//品牌图标lljf
+	var ppLljf = ele.objSpan(pg.lljfBaseAttr2);
+    contentB.appendChild(ppLljf);
+	var ppLljf1 = ele.objSpan(pg.lljfBaseAttr1);
+    contentB.appendChild(ppLljf1);
+	ppLljf1.style.left=ppLljf.offsetLeft+12+"px";
+	ppLljf1.style.top=ppLljf.offsetTop+12+"px";
+	ppLljf1.onmouseover=function(event){
+		ppLljf1.style.cursor = "pointer";
+		ppLljfNum=0;
+    }
+    ppLljf1.onmouseout=function(event){
+		ppLljf1.style.cursor = "default";
+		ppLljfNum=21;
+    }
+    ppLljf1.onmousedown = function (event){
+        
+		//xxHelp.style.left="813px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[2];
+		selectNum=2;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/category-750967281.htm?spm=a1z10.3.w4011-2853764281.14.lOxV08&tsearch=y&mid=w-2853764281-0#TmshopSrchNav";
+    }
+	
+	//品牌图标lacasa
+	var ppLacasa = ele.objSpan(pg.lacasaBaseAttr2);
+    contentB.appendChild(ppLacasa);
+	var ppLacasa1 = ele.objSpan(pg.lacasaBaseAttr1);
+    contentB.appendChild(ppLacasa1);
+	ppLacasa1.style.left=ppLacasa.offsetLeft+12+"px";
+	ppLacasa1.style.top=ppLacasa.offsetTop+12+"px";
+	ppLacasa1.onmouseover=function(event){
+		ppLacasa1.style.cursor = "pointer";
+		ppLacasaNum=0;
+    }
+    ppLacasa1.onmouseout=function(event){
+		ppLacasa1.style.cursor = "default";
+		ppLacasaNum=21;
+    }
+    ppLacasa1.onmousedown = function (event){
+        
+		//xxHelp.style.left="865px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[3];
+		selectNum=3;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/search.htm?spm=a1z10.1.w5003-8628169775.19.Yh6ciU&search=y&scid=670079746&queryType=cat&scname=08W80g%3D%3D&scene=taobao_shop";
+    }
+	
+	//品牌图标saintmarc
+	var ppSaintmarc = ele.objSpan(pg.saintmarcBaseAttr2);
+    contentB.appendChild(ppSaintmarc);
+	var ppSaintmarc1 = ele.objSpan(pg.saintmarcBaseAttr1);
+    contentB.appendChild(ppSaintmarc1);
+	ppSaintmarc1.style.left=ppSaintmarc.offsetLeft+12+"px";
+	ppSaintmarc1.style.top=ppSaintmarc.offsetTop+12+"px";
+	ppSaintmarc1.onmouseover=function(event){
+		ppSaintmarc1.style.cursor = "pointer";
+		ppSaintmarcNum=0;
+    }
+    ppSaintmarc1.onmouseout=function(event){
+		ppSaintmarc1.style.cursor = "default";
+		ppSaintmarcNum=21;
+    }
+    ppSaintmarc1.onmousedown = function (event){
+        
+		//xxHelp.style.left="553px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[4];
+		selectNum=4;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/search.htm?spm=a1z10.1.w5003-8628169775.29.Yh6ciU&scid=670079743&scname=ydDC6r%2FJ&checkedRange=true&queryType=cat&scene=taobao_shop";
+    }
+	
+	//品牌图标Christy
+	var ppChristy = ele.objSpan(pg.ChristyBaseAttr2);
+    contentB.appendChild(ppChristy);
+	var ppChristy1 = ele.objSpan(pg.ChristyBaseAttr1);
+    contentB.appendChild(ppChristy1);
+	ppChristy1.style.left=ppChristy.offsetLeft+12+"px";
+	ppChristy1.style.top=ppChristy.offsetTop+12+"px";
+	ppChristy1.onmouseover=function(event){
+		ppChristy1.style.cursor = "pointer";
+		ppChristyNum=0;
+    }
+    ppChristy1.onmouseout=function(event){
+		ppChristy1.style.cursor = "default";
+		ppChristyNum=21;
+    }
+    ppChristy1.onmousedown = function (event){
+       
+		//xxHelp.style.left="717px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[5];
+		selectNum=5;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/?q=christy&type=p&from=.shop.pc_2_searchbutton&search=y&newHeader_b=s_from&searcy_type=item&spm=a1z10.4.a2227oh.d101";
+    }
+	
+	//品牌图标lovo
+	var ppLovo = ele.objSpan(pg.lovoBaseAttr2);
+    contentB.appendChild(ppLovo);
+	var ppLovo1 = ele.objSpan(pg.lovoBaseAttr1);
+    contentB.appendChild(ppLovo1);
+	ppLovo1.style.left=ppLovo.offsetLeft+12+"px";
+	ppLovo1.style.top=ppLovo.offsetTop+12+"px";
+	ppLovo1.onmouseover=function(event){
+		ppLovo1.style.cursor = "pointer";
+		ppLovoNum=0;
+    }
+    ppLovo1.onmouseout=function(event){
+		ppLovo1.style.cursor = "default";
+		ppLovoNum=21;
+    }
+    ppLovo1.onmousedown = function (event){
+        
+		//xxHelp.style.left="813px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[6];
+		selectNum=6;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/?q=lovo&type=p&from=.shop.pc_2_searchbutton&search=y&newHeader_b=s_from&searcy_type=item&spm=a1z10.1.a2227oh.d101";
+    }
+	
+	//品牌图标ZUCCHI
+	var ppZUCCHI = ele.objSpan(pg.ZUCCHIBaseAttr2);
+    contentB.appendChild(ppZUCCHI);
+	var ppZUCCHI1 = ele.objSpan(pg.ZUCCHIBaseAttr1);
+    contentB.appendChild(ppZUCCHI1);
+	ppZUCCHI1.style.left=ppZUCCHI.offsetLeft+12+"px";
+	ppZUCCHI1.style.top=ppZUCCHI.offsetTop+12+"px";
+	ppZUCCHI1.onmouseover=function(event){
+		ppZUCCHI1.style.cursor = "pointer";
+		ppZUCCHINum=0;
+    }
+    ppZUCCHI1.onmouseout=function(event){
+		ppZUCCHI1.style.cursor = "default";
+		ppZUCCHINum=21;
+    }
+    ppZUCCHI1.onmousedown = function (event){
+       
+		//xxHelp.style.left="875px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[7];
+		selectNum=7;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/?q=ZUCCHI&type=p&from=.detail.pc_2_searchbutton&search=y&newHeader_b=s_from&searcy_type=item&spm=a220o.0.a2227oh.d101";
+    }
+	
+	//品牌图标disnep
+	var ppDisnep = ele.objSpan(pg.disnepBaseAttr2);
+    contentB.appendChild(ppDisnep);
+	var ppDisnep1 = ele.objSpan(pg.disnepBaseAttr1);
+    contentB.appendChild(ppDisnep1);
+	ppDisnep1.style.left=ppDisnep.offsetLeft+12+"px";
+	ppDisnep1.style.top=ppDisnep.offsetTop+12+"px";
+	ppDisnep1.onmouseover=function(event){
+		ppDisnep1.style.cursor = "pointer";
+		ppDisnepNum=0;
+    }
+    ppDisnep1.onmouseout=function(event){
+		ppDisnep1.style.cursor = "default";
+		ppDisnepNum=21;
+    }
+    ppDisnep1.onmousedown = function (event){
+		//xxHelp.style.left="981px";
+		xxHelp.childNodes[0].src=pg.xxHelpImg[8];
+		selectNum=8;
+		showXxHelp();
+		cpUrl="http://luolai.tmall.com/search.htm?spm=a1z10.1.w5003-8628169775.39.Yh6ciU&search=y&scid=670079744&queryType=cat&scname=tc%2FKv8Th&scene=taobao_shop";
+    }
+	
+	//口号
+	var ppKouHao1 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao1);
+	setXY(ppKouHao1,0);
+	
+	var ppKouHao2 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao2);
+	setXY(ppKouHao2,1);
+	
+	var ppKouHao3 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao3);
+	setXY(ppKouHao3,2);
+	
+	var ppKouHao4 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao4);
+	setXY(ppKouHao4,3);
+	
+	var ppKouHao5 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao5);
+	setXY(ppKouHao5,4);
+	
+	var ppKouHao6 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao6);
+	setXY(ppKouHao6,5);
+	
+	var ppKouHao7 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao7);
+	setXY(ppKouHao7,6);
+	
+	var ppKouHao8 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao8);
+	setXY(ppKouHao8,7);
+	
+	var ppKouHao9 = ele.objSpan(pg.ppKouHaoBaseAttr);
+    contentB.appendChild(ppKouHao9);
+	setXY(ppKouHao9,8);
+	
+	
+	//透明背景
+	var alphaBg = ele.objSpan(pg.alphaBgBaseAttr);
+    contentB.appendChild(alphaBg);
+	alphaBg.style.display="none";//block
+	//详细说明
+	var xxHelp = ele.objSpan(pg.xxHelpBaseAttr);
+    contentB.appendChild(xxHelp);
+	xxHelp.style.display="none";//block
+	//详细说明抢红包按钮
+	var xxHelpBtn = ele.objSpan(pg.btnHelpBaseAttr);
+    xxHelp.appendChild(xxHelpBtn);
+	xxHelpBtn.onmouseover=function(event){
+		xxHelpBtn.childNodes[0].src=pg.btnHelpImg[1];
+		xxHelpBtn.style.cursor = "pointer";
+    }
+    xxHelpBtn.onmouseout=function(event){
+        xxHelpBtn.childNodes[0].src=pg.btnHelpImg[0];
+		xxHelpBtn.style.cursor = "default";
+    }
+    xxHelpBtn.onmousedown = function (event){
+		denglu();
+    }
+	
+	//烟花1
+	var yanHua1 = ele.objSpan(pg.yanHua1BaseAttr);
+    contentB.appendChild(yanHua1);
+	yanHua1.style.display="none";//block
+	
+	//烟花2
+	var yanHua2 = ele.objSpan(pg.yanHua2BaseAttr);
+    contentB.appendChild(yanHua2);
+	yanHua2.style.display="none";//block
+	
+	//烟花3
+	var yanHua3 = ele.objSpan(pg.yanHua3BaseAttr);
+    contentB.appendChild(yanHua3);
+	yanHua3.style.display="none";//block
+	
+	//烟花4
+	var yanHua4 = ele.objSpan(pg.yanHua4BaseAttr);
+    contentB.appendChild(yanHua4);
+	yanHua4.style.display="none";//block
+	
+	//开始界面
+	var gameStart = ele.objSpan(pg.gameStartBaseAttr);
+    contentB.appendChild(gameStart);
+	var gameStartBtn = ele.objSpan(pg.gameStartBtnBaseAttr);
+    gameStart.appendChild(gameStartBtn);
+	gameStartBtn.onmouseover=function(event){
+		gameStartBtn.childNodes[0].src=pg.gameStartBtnImg[1];
+		gameStartBtn.style.cursor = "pointer";
+    }
+    gameStartBtn.onmouseout=function(event){
+        gameStartBtn.childNodes[0].src=pg.gameStartBtnImg[0];
+		gameStartBtn.style.cursor = "default";
+    }
+    gameStartBtn.onmousedown = function (event){
+        //alert("开始捕星星");
+		//showGame();
+		
+		gameHand.style.display="block";
+		gameTime=500;
+		gameStart.style.display="none";
+    }
+	gameStart.style.display="none";
+	
+	//使用提醒界面;
+	var gameOverSytx = ele.objSpan(pg.gameOverSytxBaseAttr);
+    contentB.appendChild(gameOverSytx);
+	var gameOverCGSytxSend = ele.objSpan(pg.gameSytxSendBaseAttr);
+    gameOverSytx.appendChild(gameOverCGSytxSend);
+	gameOverCGSytxSend.onmouseover=function(event){
+		gameOverCGSytxSend.childNodes[0].src=pg.gameSytxSendImg[1];
+		gameOverCGSytxSend.style.cursor = "pointer";
+    }
+    gameOverCGSytxSend.onmouseout=function(event){
+        gameOverCGSytxSend.childNodes[0].src=pg.gameSytxSendImg[0];
+		gameOverCGSytxSend.style.cursor = "default";
+    }
+    gameOverCGSytxSend.onmousedown = function (event){
+        //发送手机号;
+		if(gameOverSytxPhone.childNodes[0].value==""){
+			alert("请输入您的手机号");
+		}else{
+			savePhone(gameOverSytxPhone.childNodes[0].value);
+		}
+    }
+	var gameOverSytxPhone = ele.objSpan(pg.gamePhoneBaseAttr);
+    gameOverSytx.appendChild(gameOverSytxPhone);
+	//gameOverSytxPhone.textContent="<input type='text' name='textarea' readonly='readonly' id='textarea' style='background-color:transparent; outline:none; resize:none; color:#000000; border:hidden;font-size:"+25*pg.rate+"px; width:"+(gameOverSytxPhone.offsetWidth)+"px'>";
+	gameOverSytxPhone.innerHTML="<input type='text' maxlength='11' name='txt' style='background-color:transparent;color:#000000; border:hidden;outline:none; font-size:"+(25*pg.rate)+"px; width:"+gameOverSytxPhone.offsetWidth+"px'>";
+	gameOverSytxPhone.childNodes[0].value="";
+	gameOverSytx.style.display="none";
+	
+	//成功界面
+	var gameOverCG = ele.objSpan(pg.gameOverCGBaseAttr);
+    contentB.appendChild(gameOverCG);
+	var gameOverCGMoney = ele.objSpan(pg.gameMoneyBaseAttr);
+    gameOverCG.appendChild(gameOverCGMoney);
+	gameOverCGMoney.style.fontSize="50px";
+	//gameOverCGMoney.style.verticalAlign="middle";// line-height:24px;
+	gameOverCGMoney.style.textAlign="center";
+	gameOverCGMoney.style.color="#ffffff";
+	gameOverCGMoney.innerText="";
+	gameOverCGMoney.textContent="";
+	
+	var gameOverCGSytx = ele.objSpan(pg.gameCGSytxBaseAttr);
+    gameOverCG.appendChild(gameOverCGSytx);
+	gameOverCGSytx.onmouseover=function(event){
+		gameOverCGSytx.childNodes[0].src=pg.gameCGSytxImg[1];
+		gameOverCGSytx.style.cursor = "pointer";
+    }
+    gameOverCGSytx.onmouseout=function(event){
+        gameOverCGSytx.childNodes[0].src=pg.gameCGSytxImg[0];
+		gameOverCGSytx.style.cursor = "default";
+    }
+    gameOverCGSytx.onmousedown = function (event){
+        //alert("使用提醒");
+		gameOverCG.style.display="none";
+		gameOverSytx.style.display="block";
+    }
+	
+	var gameOverCGFxwb = ele.objSpan(pg.gameCGFxwbBaseAttr);
+    gameOverCG.appendChild(gameOverCGFxwb);
+	gameOverCGFxwb.onmouseover=function(event){
+		gameOverCGFxwb.childNodes[0].src=pg.gameCGFxwbImg[1];
+		gameOverCGFxwb.style.cursor = "pointer";
+    }
+    gameOverCGFxwb.onmouseout=function(event){
+        gameOverCGFxwb.childNodes[0].src=pg.gameCGFxwbImg[0];
+		gameOverCGFxwb.style.cursor = "default";
+    }
+    gameOverCGFxwb.onmousedown = function (event){
+        //alert("分享微博");
+		share();
+    }
+	gameOverCG.style.display="none";
+	
+	//失败界面
+	var gameOverSB = ele.objSpan(pg.gameOverSBBaseAttr);
+    contentB.appendChild(gameOverSB);
+	var gameOverSBZwyc = ele.objSpan(pg.gameZwycBaseAttr);
+    gameOverSB.appendChild(gameOverSBZwyc);
+	gameOverSBZwyc.onmouseover=function(event){
+		gameOverSBZwyc.childNodes[0].src=pg.gameZwycImg[1];
+		gameOverSBZwyc.style.cursor = "pointer";
+    }
+    gameOverSBZwyc.onmouseout=function(event){
+        gameOverSBZwyc.childNodes[0].src=pg.gameZwycImg[0];
+		gameOverSBZwyc.style.cursor = "default";
+    }
+    gameOverSBZwyc.onmousedown = function (event){
+        //alert("再来一次");
+		contentB.childNodes[0].src=pg.backImg[0];
+		cDown.childNodes[0].src=pg.downImg[0];
+		if(!version78){
+		ppKids.style.display="block";
+		ppYolann.style.display="block";
+		ppLljf.style.display="block";
+		ppLacasa.style.display="block";
+		ppSaintmarc.style.display="block";
+		ppChristy.style.display="block";
+		ppLovo.style.display="block";
+		ppZUCCHI.style.display="block";
+		ppDisnep.style.display="block";
+		}
+		ppKids1.style.display="block";
+		ppYolann1.style.display="block";
+		ppLljf1.style.display="block";
+		ppLacasa1.style.display="block";
+		ppSaintmarc1.style.display="block";
+		ppChristy1.style.display="block";
+		ppLovo1.style.display="block";
+		ppZUCCHI1.style.display="block";
+		ppDisnep1.style.display="block";
+		
+		//xxHelp.style.display="block";
+		ppKouHao1.style.display="block";
+		ppKouHao2.style.display="block";
+		ppKouHao3.style.display="block";
+		ppKouHao4.style.display="block";
+		ppKouHao5.style.display="block";
+		ppKouHao6.style.display="block";
+		ppKouHao7.style.display="block";
+		ppKouHao8.style.display="block";
+		ppKouHao9.style.display="block";
+		//gamePpImages.childNodes[0].src=pg.ppImagesImg[selectNum];
+		gamePpImages.style.display="none";
+		pzxxNum=0;
+		gameWuXing1.childNodes[0].src=pg.gameWuXingImg[0];
+		gameWuXing2.childNodes[0].src=pg.gameWuXingImg[0];
+		gameWuXing3.childNodes[0].src=pg.gameWuXingImg[0];
+		gameWuXing1.style.display="none";
+		gameWuXing2.style.display="none";
+		gameWuXing3.style.display="none";
+		gameLoad1.style.display="none";
+		gameLoad2.style.display="none";
+		gameLoadTime.style.display="none";
+		
+		gameZuaXing1.style.display="none";
+		gameZuaXing2.style.display="none";
+		gameZuaXing3.style.display="none";
+		gameZuaXing4.style.display="none";
+		gameZuaXing5.style.display="none";
+		
+		gameHand.style.display="none";
+		gameTime=-1;
+		gameOverCG.style.display="none";
+		gameOverSB.style.display="none";
+		gameStart.style.display="none";
+		
+		yanHua1.style.display="none";//
+		yanHua2.style.display="none";//
+		yanHua3.style.display="none";//
+		yanHua4.style.display="none";//
+    }
+	
+	var gameOverSBFxwb = ele.objSpan(pg.gameFxwbBaseAttr);
+    gameOverSB.appendChild(gameOverSBFxwb);
+	gameOverSBFxwb.onmouseover=function(event){
+		gameOverSBFxwb.childNodes[0].src=pg.gameFxwbImg[1];
+		gameOverSBFxwb.style.cursor = "pointer";
+    }
+    gameOverSBFxwb.onmouseout=function(event){
+        gameOverSBFxwb.childNodes[0].src=pg.gameFxwbImg[0];
+		gameOverSBFxwb.style.cursor = "default";
+    }
+    gameOverSBFxwb.onmousedown = function (event){
+        //alert("分享微博");
+		share();
+    }
+	gameOverSB.style.display="none";
+	
+	
+	//捕捉到星星
+	function getXingXing(){
+		pzxxNum++;
+		if(pzxxNum==1){
+			gameWuXing1.childNodes[0].src=pg.gameWuXingImg[1];
+		}
+		if(pzxxNum==2){
+			gameWuXing2.childNodes[0].src=pg.gameWuXingImg[1];
+		}
+		if(pzxxNum==3){
+			gameWuXing3.childNodes[0].src=pg.gameWuXingImg[1];
+			gameZuaXing1.style.display="none";
+			gameZuaXing2.style.display="none";
+			gameZuaXing3.style.display="none";
+			gameZuaXing4.style.display="none";
+			gameZuaXing5.style.display="none";
+			gameHand.style.display="none";
+			//gameOverCG.style.display="block";
+			//chouJiang();//抽奖;
+			yanHua1.style.display="block";//
+			yanHua2.style.display="block";//
+			yanHua3.style.display="block";//
+			yanHua4.style.display="block";//
+			if(!version78){
+			yanHua1.style.opacity = 0;
+			yanHua1.style.filter ="alpha(opacity="+0*5+")";
+			yanHua2.style.opacity = 0;
+			yanHua2.style.filter ="alpha(opacity="+0*5+")";
+			yanHua3.style.opacity = 0;
+			yanHua3.style.filter ="alpha(opacity="+0*5+")";
+			yanHua4.style.opacity = 0;
+			yanHua4.style.filter ="alpha(opacity="+0*5+")";
+			}
+			/*
+			yanHua1.style.top=(yanHua1.offsetTop+100)+"px";
+			yanHua2.style.top=(yanHua2.offsetTop+100)+"px";
+			yanHua3.style.top=(yanHua3.offsetTop+100)+"px";
+			yanHua4.style.top=(yanHua4.offsetTop+100)+"px";
+			*/
+			yanHuaNum=0;
+			gameTime=-1;
+		}
+	}
+	//显示品牌详细介绍
+	function showXxHelp(){
+		alphaBg.style.display="block";
+		xxHelp.style.display="block";
+		xxHelpNum=0;
+		if(!version78){
+		xxHelp.style.opacity = xxHelpNum/20;
+		xxHelp.style.filter ="alpha(opacity="+xxHelpNum*5+")";
+		}
+	}
+	
+	//显示游戏
+	function showGame(){
+		contentB.childNodes[0].src=pg.backImg[1];
+		cDown.childNodes[0].src=pg.downImg[1];
+		ppKids.style.display="none";
+		ppYolann.style.display="none";
+		ppLljf.style.display="none";
+		ppLacasa.style.display="none";
+		ppSaintmarc.style.display="none";
+		ppChristy.style.display="none";
+		ppLovo.style.display="none";
+		ppZUCCHI.style.display="none";
+		ppDisnep.style.display="none";
+		
+		ppKids1.style.display="none";
+		ppYolann1.style.display="none";
+		ppLljf1.style.display="none";
+		ppLacasa1.style.display="none";
+		ppSaintmarc1.style.display="none";
+		ppChristy1.style.display="none";
+		ppLovo1.style.display="none";
+		ppZUCCHI1.style.display="none";
+		ppDisnep1.style.display="none";
+		
+		alphaBg.style.display="none";
+		xxHelp.style.display="none";
+		ppKouHao1.style.display="none";
+		ppKouHao2.style.display="none";
+		ppKouHao3.style.display="none";
+		ppKouHao4.style.display="none";
+		ppKouHao5.style.display="none";
+		ppKouHao6.style.display="none";
+		ppKouHao7.style.display="none";
+		ppKouHao8.style.display="none";
+		ppKouHao9.style.display="none";
+		gamePpImages.childNodes[0].src=pg.ppImagesImg[selectNum];
+		gamePpImages.style.display="block";
+		gameWuXing1.style.display="block";
+		gameWuXing2.style.display="block";
+		gameWuXing3.style.display="block";
+		gameLoad1.style.display="block";
+		gameLoad2.style.display="block";
+		gameLoadTime.style.display="block";
+		
+		gameZuaXing1.style.display="block";
+		gameZuaXing2.style.display="block";
+		gameZuaXing3.style.display="block";
+		gameZuaXing4.style.display="block";
+		gameZuaXing5.style.display="block";
+	    gameZuaXing1.style.left=(Math.floor(Math.random()*200)+450)+"px";
+	    gameZuaXing1.style.top=(Math.floor(Math.random()*300)-300)+"px";
+	    gameZuaXing2.style.left=(Math.floor(Math.random()*200)+650)+"px";
+	    gameZuaXing2.style.top=(Math.floor(Math.random()*300)-400)+"px";
+	    gameZuaXing3.style.left=(Math.floor(Math.random()*200)+850)+"px";
+	    gameZuaXing3.style.top=(Math.floor(Math.random()*300)-300)+"px";
+	    gameZuaXing4.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+	    gameZuaXing4.style.top=(Math.floor(Math.random()*300)-400)+"px";
+	    gameZuaXing5.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+	    gameZuaXing5.style.top=(Math.floor(Math.random()*300)-300)+"px";
+		
+	}
+	
+	function showStart(){
+		gameStart.style.display="block";
+		showGame();
+	}
+	
+	function setXY(ppKouHao,num){
+		kouHaoNum=num;
+		ppKouHao.style.opacity = 0/20;
+		ppKouHao.style.filter ="alpha(opacity="+0*5+")";
+		ppKouHao.style.left=kouHaoArrX[kouHaoNum]+"px";
+		ppKouHao.style.top=kouHaoArrY[kouHaoNum]+"px";
+		ppKouHao.childNodes[0].src=pg.ppKouHaoImg[kouHaoNum];
+	}
+	
+	var ppKidsNum=41;//Math.round(Math.random()*40); 
+	var ppYolannNum=41;//Math.round(Math.random()*40); 
+	var ppLljfNum=41;//Math.round(Math.random()*40); 
+	var ppLacasaNum=41;//Math.round(Math.random()*40); 
+	var ppSaintmarcNum=41;//Math.round(Math.random()*40); 
+	var ppChristyNum=41;//Math.round(Math.random()*40); 
+	var ppLovoNum=41;//Math.round(Math.random()*40); 
+	var ppZUCCHINum=41;//Math.round(Math.random()*40); 
+	var ppDisnepNum=41;//Math.round(Math.random()*40);
+	
+	if(version78){
+		ppKids.style.display = "none";
+		ppYolann.style.display = "none";
+		ppLljf.style.display = "none";
+		ppLacasa.style.display = "none";
+		ppSaintmarc.style.display = "none";
+		ppChristy.style.display = "none";
+		ppLovo.style.display = "none";
+		ppZUCCHI.style.display = "none";
+		ppDisnep.style.display = "none";
+	}else{
+	
+	    ppKids.style.opacity = 0;
+		ppKids.style.filter ="0";
+		ppYolann.style.opacity = 0;
+		ppYolann.style.filter ="0";
+		ppLljf.style.opacity = 0;
+		ppLljf.style.filter ="0";
+		ppLacasa.style.opacity = 0;
+		ppLacasa.style.filter ="0";
+		ppSaintmarc.style.opacity = 0;
+		ppSaintmarc.style.filter ="0";
+		ppChristy.style.opacity = 0;
+		ppChristy.style.filter ="0";
+		ppLovo.style.opacity = 0;
+		ppLovo.style.filter ="0";
+		ppZUCCHI.style.opacity = 0;
+		ppZUCCHI.style.filter ="0";
+		ppDisnep.style.opacity = 0;
+		ppDisnep.style.filter ="0";
+	}
+	var st = setInterval(function (){
+		if(gameTime>0){
+			gameTime--;
+			//alert(Math.round(gameTime/500*271));
+			gameLoadTime.innerText=(Math.round(gameTime/500*15))+" 秒";
+			gameLoadTime.textContent=(Math.round(gameTime/500*15))+" 秒";
+			gameLoad2.style.width=Math.round(gameTime/500*271)+"px";
+			if(gameTime<=0){
+				gameZuaXing1.style.display="none";
+				gameZuaXing2.style.display="none";
+				gameZuaXing3.style.display="none";
+				gameZuaXing4.style.display="none";
+				gameZuaXing5.style.display="none";
+				gameHand.style.display="none";
+				gameOverSB.style.display="block";
+				gameOverSB.childNodes[0].src=pg.gameOverSBImg[0];
+				//alert("游戏结束");
+			}
+		}
+		if(gameHand.style.display=="block"){
+			gameHand.style.left=(mouseX-contentB.offsetLeft-20)+"px";
+			gameHand.style.top=(mouseY-20)+"px";
+		}
+		if(xxHelp.style.display=="block"&&xxHelpNum<20){
+			
+			xxHelpNum++;
+			//alert("a:"+xxHelpNum);
+			if(!version78){
+			xxHelp.style.opacity = xxHelpNum/20;
+			xxHelp.style.filter ="alpha(opacity="+xxHelpNum*5+")";
+			}
+		}
+		if(xxHelp.style.display=="block"&&xxHelpNum>20){
+			xxHelpNum--;
+			//alert("b:"+xxHelpNum);
+			if(!version78){
+			xxHelp.style.opacity = (xxHelpNum-20)/20;
+			xxHelp.style.filter ="alpha(opacity="+((xxHelpNum-20)*5)+")";
+			}
+			if(xxHelpNum==20){
+				xxHelp.style.display="none";
+				alphaBg.style.display="none";
+			}
+		}
+		
+		
+		liuXing1.style.left=(liuXing1.offsetLeft-3)+"px";
+		liuXing1.style.top=(liuXing1.offsetTop+3)+"px";
+		if(liuXing1.offsetTop-liuXing1.offsetHeight>500){
+			liuXing1.style.left=(Math.floor(Math.random()*200)+650)+"px";
+			liuXing1.style.top=(-liuXing1.offsetHeight)+"px";
+		}
+		
+		liuXing2.style.left=(liuXing2.offsetLeft-2)+"px";
+		liuXing2.style.top=(liuXing2.offsetTop+2)+"px";
+		if(liuXing2.offsetTop-liuXing2.offsetHeight>500){
+			liuXing2.style.left=(Math.floor(Math.random()*200)+850)+"px";
+			liuXing2.style.top=(-liuXing2.offsetHeight)+"px";
+		}
+		
+		liuXing3.style.left=(liuXing3.offsetLeft-4)+"px";
+		liuXing3.style.top=(liuXing3.offsetTop+4)+"px";
+		if(liuXing3.offsetTop-liuXing3.offsetHeight>500){
+			liuXing3.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+			liuXing3.style.top=(-liuXing3.offsetHeight)+"px";
+		}
+		
+		liuXing4.style.left=(liuXing4.offsetLeft-3)+"px";
+		liuXing4.style.top=(liuXing4.offsetTop+3)+"px";
+		if(liuXing4.offsetTop-liuXing4.offsetHeight>500){
+			liuXing4.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+			liuXing4.style.top=(-liuXing4.offsetHeight)+"px";
+		}
+		
+		liuXing5.style.left=(liuXing5.offsetLeft-3)+"px";
+		liuXing5.style.top=(liuXing5.offsetTop+3)+"px";
+		if(liuXing5.offsetTop-liuXing5.offsetHeight>500){
+			liuXing5.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+			liuXing5.style.top=(-liuXing5.offsetHeight)+"px";
+		}
+		
+		liuXing6.style.left=(liuXing6.offsetLeft-2)+"px";
+		liuXing6.style.top=(liuXing6.offsetTop+2)+"px";
+		if(liuXing6.offsetTop-liuXing6.offsetHeight>500){
+			liuXing6.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+			liuXing6.style.top=(-liuXing6.offsetHeight)+"px";
+		}
+		
+		liuXing7.style.left=(liuXing7.offsetLeft-4)+"px";
+		liuXing7.style.top=(liuXing7.offsetTop+4)+"px";
+		if(liuXing7.offsetTop-liuXing7.offsetHeight>500){
+			liuXing7.style.left=(Math.floor(Math.random()*200)+850)+"px";
+			liuXing7.style.top=(-liuXing7.offsetHeight)+"px";
+		}
+		
+		liuXing8.style.left=(liuXing8.offsetLeft-3)+"px";
+		liuXing8.style.top=(liuXing8.offsetTop+3)+"px";
+		if(liuXing8.offsetTop-liuXing8.offsetHeight>500){
+			liuXing8.style.left=(Math.floor(Math.random()*200)+650)+"px";
+			liuXing8.style.top=(-liuXing8.offsetHeight)+"px";
+		}
+		
+		
+		gameZuaXing1.style.left=(gameZuaXing1.offsetLeft-4)+"px";
+		gameZuaXing1.style.top=(gameZuaXing1.offsetTop+4)+"px";
+		if(gameZuaXing1.offsetTop-gameZuaXing1.offsetHeight>300){
+			gameZuaXing1.style.left=(Math.floor(Math.random()*200)+650)+"px";
+			gameZuaXing1.style.top=(-gameZuaXing1.offsetHeight)+"px";
+		}
+		
+		gameZuaXing2.style.left=(gameZuaXing2.offsetLeft-5)+"px";
+		gameZuaXing2.style.top=(gameZuaXing2.offsetTop+5)+"px";
+		if(gameZuaXing2.offsetTop-gameZuaXing2.offsetHeight>300){
+			gameZuaXing2.style.left=(Math.floor(Math.random()*200)+850)+"px";
+			gameZuaXing2.style.top=(-gameZuaXing2.offsetHeight)+"px";
+		}
+		
+		gameZuaXing3.style.left=(gameZuaXing3.offsetLeft-4.5)+"px";
+		gameZuaXing3.style.top=(gameZuaXing3.offsetTop+4.5)+"px";
+		if(gameZuaXing3.offsetTop-gameZuaXing3.offsetHeight>300){
+			gameZuaXing3.style.left=(Math.floor(Math.random()*200)+1050)+"px";
+			gameZuaXing3.style.top=(-gameZuaXing3.offsetHeight)+"px";
+		}
+		
+		gameZuaXing4.style.left=(gameZuaXing4.offsetLeft-6)+"px";
+		gameZuaXing4.style.top=(gameZuaXing4.offsetTop+6)+"px";
+		if(gameZuaXing4.offsetTop-gameZuaXing4.offsetHeight>300){
+			gameZuaXing4.style.left=(Math.floor(Math.random()*200)+1250)+"px";
+			gameZuaXing4.style.top=(-gameZuaXing4.offsetHeight)+"px";
+		}
+		
+		gameZuaXing5.style.left=(gameZuaXing5.offsetLeft-5.5)+"px";
+		gameZuaXing5.style.top=(gameZuaXing5.offsetTop+5.5)+"px";
+		if(gameZuaXing5.offsetTop-gameZuaXing5.offsetHeight>300){
+			gameZuaXing5.style.left=(Math.floor(Math.random()*200)+1450)+"px";
+			gameZuaXing5.style.top=(-gameZuaXing5.offsetHeight)+"px";
+		}
+		
+		
+		
+		if(ppKidsNum<=40){
+			if(ppKidsNum!=20){
+				ppKidsNum++;
+			}
+		if(ppKidsNum<20){
+			ppKouHao1.style.opacity = ppKidsNum/20;
+			ppKouHao1.style.filter ="alpha(opacity="+ppKidsNum*5+")";
+			
+			ppKids.style.opacity = ppKidsNum/20;
+			ppKids.style.filter ="alpha(opacity="+ppKidsNum*5+")";
+		}
+		if(ppKidsNum>20){
+			ppKouHao1.style.opacity = 1-(ppKidsNum-20)/20;
+			ppKouHao1.style.filter ="alpha(opacity="+(100-(ppKidsNum-20)*5)+")";
+			
+			ppKids.style.opacity = 1-(ppKidsNum-20)/20;
+			ppKids.style.filter ="alpha(opacity="+(100-(ppKidsNum-20)*5)+")";
+		}
+		}
+		
+		if(ppYolannNum<=40){
+			if(ppYolannNum!=20){
+				ppYolannNum++;
+			}
+		if(ppYolannNum<20){
+			ppKouHao3.style.opacity = ppYolannNum/20;
+			ppKouHao3.style.filter ="alpha(opacity="+ppYolannNum*5+")";
+			
+			ppYolann.style.opacity = ppYolannNum/20;
+			ppYolann.style.filter ="alpha(opacity="+ppYolannNum*5+")";
+		}
+		if(ppYolannNum>20){
+			ppKouHao3.style.opacity = 1-(ppYolannNum-20)/20;
+			ppKouHao3.style.filter ="alpha(opacity="+(100-(ppYolannNum-20)*5)+")";
+			
+			ppYolann.style.opacity = 1-(ppYolannNum-20)/20;
+			ppYolann.style.filter ="alpha(opacity="+(100-(ppYolannNum-20)*5)+")";
+		}
+		}
+		
+		if(ppLljfNum<=40){
+			if(ppLljfNum!=20){
+				ppLljfNum++;
+			}
+		if(ppLljfNum<20){
+			ppKouHao4.style.opacity = ppLljfNum/20;
+			ppKouHao4.style.filter ="alpha(opacity="+ppLljfNum*5+")";
+			
+			ppLljf.style.opacity = ppLljfNum/20;
+			ppLljf.style.filter ="alpha(opacity="+ppLljfNum*5+")";
+		}
+		if(ppLljfNum>20){
+			ppKouHao4.style.opacity = 1-(ppLljfNum-20)/20;
+			ppKouHao4.style.filter ="alpha(opacity="+(100-(ppLljfNum-20)*5)+")";
+			
+			ppLljf.style.opacity = 1-(ppLljfNum-20)/20;
+			ppLljf.style.filter ="alpha(opacity="+(100-(ppLljfNum-20)*5)+")";
+		}
+		}
+		
+		if(ppLacasaNum<=40){
+			if(ppLacasaNum!=20){
+				ppLacasaNum++;
+			}
+		if(ppLacasaNum<20){
+			ppKouHao5.style.opacity = ppLacasaNum/20;
+			ppKouHao5.style.filter ="alpha(opacity="+ppLacasaNum*5+")";
+			
+			ppLacasa.style.opacity = ppLacasaNum/20;
+			ppLacasa.style.filter ="alpha(opacity="+ppLacasaNum*5+")";
+		}
+		if(ppLacasaNum>20){
+			ppKouHao5.style.opacity = 1-(ppLacasaNum-20)/20;
+			ppKouHao5.style.filter ="alpha(opacity="+(100-(ppLacasaNum-20)*5)+")";
+			
+			ppLacasa.style.opacity = 1-(ppLacasaNum-20)/20;
+			ppLacasa.style.filter ="alpha(opacity="+(100-(ppLacasaNum-20)*5)+")";
+		}
+		}
+		
+		if(ppSaintmarcNum<=40){
+			if(ppSaintmarcNum!=20){
+				ppSaintmarcNum++;
+			}
+		if(ppSaintmarcNum<20){
+			ppKouHao6.style.opacity = ppSaintmarcNum/20;
+			ppKouHao6.style.filter ="alpha(opacity="+ppSaintmarcNum*5+")";
+			
+			ppSaintmarc.style.opacity = ppSaintmarcNum/20;
+			ppSaintmarc.style.filter ="alpha(opacity="+ppSaintmarcNum*5+")";
+		}
+		if(ppSaintmarcNum>20){
+			ppKouHao6.style.opacity = 1-(ppSaintmarcNum-20)/20;
+			ppKouHao6.style.filter ="alpha(opacity="+(100-(ppSaintmarcNum-20)*5)+")";
+			
+			ppSaintmarc.style.opacity = 1-(ppSaintmarcNum-20)/20;
+			ppSaintmarc.style.filter ="alpha(opacity="+(100-(ppSaintmarcNum-20)*5)+")";
+		}
+		}
+		
+		if(ppChristyNum<=40){
+			if(ppChristyNum!=20){
+				ppChristyNum++;
+			}
+		if(ppChristyNum<20){
+			ppKouHao9.style.opacity = ppChristyNum/20;
+			ppKouHao9.style.filter ="alpha(opacity="+ppChristyNum*5+")";
+			
+			ppChristy.style.opacity = ppChristyNum/20;
+			ppChristy.style.filter ="alpha(opacity="+ppChristyNum*5+")";
+		}
+		if(ppChristyNum>20){
+			ppKouHao9.style.opacity = 1-(ppChristyNum-20)/20;
+			ppKouHao9.style.filter ="alpha(opacity="+(100-(ppChristyNum-20)*5)+")";
+			
+			ppChristy.style.opacity = 1-(ppChristyNum-20)/20;
+			ppChristy.style.filter ="alpha(opacity="+(100-(ppChristyNum-20)*5)+")";
+		}
+		}
+		
+		if(ppLovoNum<=40){
+			if(ppLovoNum!=20){
+				ppLovoNum++;
+			}
+		if(ppLovoNum<20){
+			ppKouHao7.style.opacity = ppLovoNum/20;
+			ppKouHao7.style.filter ="alpha(opacity="+ppLovoNum*5+")";
+			
+			ppLovo.style.opacity = ppLovoNum/20;
+			ppLovo.style.filter ="alpha(opacity="+ppLovoNum*5+")";
+		}
+		if(ppLovoNum>20){
+			ppKouHao7.style.opacity = 1-(ppLovoNum-20)/20;
+			ppKouHao7.style.filter ="alpha(opacity="+(100-(ppLovoNum-20)*5)+")";
+			
+			ppLovo.style.opacity = 1-(ppLovoNum-20)/20;
+			ppLovo.style.filter ="alpha(opacity="+(100-(ppLovoNum-20)*5)+")";
+		}
+		}
+		
+		if(ppZUCCHINum<=40){
+			if(ppZUCCHINum!=20){
+				ppZUCCHINum++;
+			}
+		if(ppZUCCHINum<20){
+			ppKouHao8.style.opacity = ppZUCCHINum/20;
+			ppKouHao8.style.filter ="alpha(opacity="+ppZUCCHINum*5+")";
+			
+			ppZUCCHI.style.opacity = ppZUCCHINum/20;
+			ppZUCCHI.style.filter ="alpha(opacity="+ppZUCCHINum*5+")";
+		}
+		if(ppZUCCHINum>20){
+			ppKouHao8.style.opacity = 1-(ppZUCCHINum-20)/20;
+			ppKouHao8.style.filter ="alpha(opacity="+(100-(ppZUCCHINum-20)*5)+")";
+			
+			ppZUCCHI.style.opacity = 1-(ppZUCCHINum-20)/20;
+			ppZUCCHI.style.filter ="alpha(opacity="+(100-(ppZUCCHINum-20)*5)+")";
+		}
+		}
+		
+		if(ppDisnepNum<=40){
+			if(ppDisnepNum!=20){
+				ppDisnepNum++;
+			}
+		if(ppDisnepNum<20){
+			ppKouHao2.style.opacity = ppDisnepNum/20;
+			ppKouHao2.style.filter ="alpha(opacity="+ppDisnepNum*5+")";
+			
+			ppDisnep.style.opacity = ppDisnepNum/20;
+			ppDisnep.style.filter ="alpha(opacity="+ppDisnepNum*5+")";
+		}
+		if(ppDisnepNum>20){
+			ppKouHao2.style.opacity = 1-(ppDisnepNum-20)/20;
+			ppKouHao2.style.filter ="alpha(opacity="+(100-(ppDisnepNum-20)*5)+")";
+			
+			ppDisnep.style.opacity = 1-(ppDisnepNum-20)/20;
+			ppDisnep.style.filter ="alpha(opacity="+(100-(ppDisnepNum-20)*5)+")";
+		}
+		}
+		
+		if(yanHuaNum<100){
+			yanHuaNum++;
+			/*
+			yanHua1.style.top=(yanHua1.offsetTop-2)+"px";
+			yanHua2.style.top=(yanHua2.offsetTop-2)+"px";
+			yanHua3.style.top=(yanHua3.offsetTop-2)+"px";
+			yanHua4.style.top=(yanHua4.offsetTop-2)+"px";
+			*/
+			
+			if(!version78){
+				if(yanHuaNum<25){
+					yanHua1.style.opacity = yanHuaNum/25;
+					yanHua1.style.filter ="alpha(opacity="+yanHuaNum*4+")";
+				}else if(yanHuaNum<50){
+					yanHua2.style.opacity = (yanHuaNum-25)/25;
+					yanHua2.style.filter ="alpha(opacity="+(yanHuaNum-25)*4+")";
+				}else if(yanHuaNum<75){
+					yanHua3.style.opacity = (yanHuaNum-50)/25;
+					yanHua3.style.filter ="alpha(opacity="+(yanHuaNum-50)*4+")";
+				}else if(yanHuaNum<100){
+					yanHua4.style.opacity = (yanHuaNum-75)/25;
+					yanHua4.style.filter ="alpha(opacity="+(yanHuaNum-75)*4+")";
+				}
+			}
+			
+			if(yanHuaNum==100){
+				chouJiang();//抽奖;
+			}
+		}
+		
+	},30);
+	
+	function denglu() {
+          KISSY.ready(function (S) {
+               KISSY.config({
+                   debug: true,
+                   packages: [
+                       {
+                           name: "mmcomponents",
+                           path: "http://g.tbcdn.cn/mm/mamacomponent/0.0.6/",
+                           combine: false
+                       }
+                   ]
+               });
+                KISSY.use("mmcomponents/mamaTmallLogin/index", function (S, mmLogin) {
+                    isLogin({
+                        have: function (nick) {
+							//alert("成功");
+							showStart();
+                            var A = jQuery;
+                            A.ajax({
+                                type:"post",
+                                dataType:"JSONP",
+                                url:"http://showcase.display.taobao.com/common/addStore.json?app=luolai",
+                                jsonpCallback:'wewe',
+                                success:function(data,status){
+									//alert(data.info.code);
+                                    if(data.info.ok==true) {
+                                        //alert("收藏成功！");
+                                    }else{
+                                        //alert("收藏失败，请登录后再收藏！");
+                                        //location.href = "http://login.tmall.com/?redirect_url=" + location.href;
+                                    }
+                                }
+                            });
+                        },
+                        no: function () {
+							//alert("失败");
+                            login(function () {
+								showStart();
+                                var A = jQuery;
+                                A.ajax({
+                                    type:"post",
+                                    dataType:"JSONP",
+                                    url:"http://showcase.display.taobao.com/common/addStore.json?app=luolai",
+                                    jsonpCallback:'wewe',
+                                    success:function(data,status){
+                                        if(data.info.ok==true) {
+											//alert("收藏成功！");
+                                        }else{
+											//alert("收藏失败，请登录后再收藏！");
+                                        }
+                                    }
+                                });
+                            }, true);
+                        }
+                    })
+                })
+            });
+        }
+		
+		function chouJiang() {
+			var A = jQuery;
+            A.ajax({
+                type:"get",
+                dataType:"JSONP",
+                url:"http://showcase.display.taobao.com/common/lottey.json",
+                jsonpCallback:'wewe',
+				data:{
+					app:'luolai',
+					ua:encodeURIComponent (getUA())
+				},
+				cache:false,
+                success:function(data,status){
+					//alert(data.info.code);
+					//alert(data.info.message);
+                    if(data.info.ok==true) {
+                        //alert("抽奖成功！");
+						gameOverCG.style.display="block";
+                    }else{
+                        //alert("抽奖失败！");
+						gameOverSB.style.display="block";
+						gameOverSB.childNodes[0].src=pg.gameOverSBImg[1];
+                    }
+                }
+            });
+        }
+		
+		function savePhone(phoneNum) {
+			var A = jQuery;
+            A.ajax({
+                type:"post",
+                dataType:"JSONP",
+                url:"http://showcase.display.taobao.com/common/addForm.json?app=luolai&&value={phone:"+phoneNum+"}",
+                jsonpCallback:'wewe',
+                success:function(data,status){
+					//alert(data.info.code);
+					//alert(data.info.message);
+                    if(data.info.ok==true) {
+                        alert("发送提醒成功！");
+						gameOverCG.style.display="block";
+						gameOverSytx.style.display="none";
+                    }else{
+                        alert("发送提醒失败！");
+						gameOverCG.style.display="block";
+						gameOverSytx.style.display="none";
+                    }
+                }
+            });
+        }
+		function share(){
+			window.location.href=cpUrl;
+        }
+		
+}
+
+</script>
+
+ <style>
+ .bg { background: url(http://img02.taobaocdn.com/imgextra/i2/279887075/TB2W9QbaFXXXXXkXpXXXXXXXXXX_!!279887075.jpg) no-repeat center; width:100%; }
+        .bg img{ float:left;}
+        </style>
+</head>
+    <body style="background: black;" onload="loading()">
+        <div style="" >
+        
+            <div id="content">
+            
+            </div>
+          <div class="bg">
+            <div style="  margin:auto; margin-top:500px;width:990px;height:5224px; "  >
+            <a href="http://taoquan.taobao.com/coupon/unify_apply.htm?spm=a1z10.1.w5003-8955353685.3.yKmkTZ&amp;sellerId=279887075&amp;activityId=156070573&amp;scene=taobao_shop" target="_blank"><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB2wWUfaFXXXXbaXXXXXXXXXXXX_!!279887075.jpg" width="255" height="207" /></a><a href="http://taoquan.taobao.com/coupon/unify_apply.htm?spm=a1z10.1.w5003-8955353685.4.yKmkTZ&amp;sellerId=279887075&amp;activityId=155872760&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2PaAcaFXXXXc9XXXXXXXXXXXX_!!279887075.jpg" width="241" height="207" /></a><a href="http://taoquan.taobao.com/coupon/unify_apply.htm?spm=a1z10.1.w5003-8955353685.5.yKmkTZ&amp;sellerId=279887075&amp;activityId=155796836&amp;scene=taobao_shop" target="_blank"><img src="http://img03.taobaocdn.com/imgextra/i3/279887075/TB2_NMXaFXXXXaKXpXXXXXXXXXX_!!279887075.jpg" width="239" height="207" /></a><a href="http://taoquan.taobao.com/coupon/unify_apply.htm?spm=a1z10.1.w5003-8955353685.6.yKmkTZ&amp;sellerId=279887075&amp;activityId=156336839&amp;scene=taobao_shop" target="_blank"><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB2QdMaaFXXXXX6XpXXXXXXXXXX_!!279887075.jpg" width="255" height="207" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.8.yKmkTZ&amp;id=41406787977&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2E6EXaFXXXXabXpXXXXXXXXXX_!!279887075.jpg" width="990" height="263" /><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2gwEfaFXXXXa.XXXXXXXXXXXX_!!279887075.jpg" width="990" height="261" /></a><a href="http://detail.tmall.com//item.htm?spm=a1z10.1.w5003-8955353685.10.yKmkTZ&amp;id=41552007898&amp;scene=taobao_shop" target="_blank"><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2zGkbaFXXXXXsXpXXXXXXXXXX_!!279887075.jpg" width="990" height="260" /><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2yKkeaFXXXXbmXXXXXXXXXXXX_!!279887075.jpg" width="990" height="263" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.11.yKmkTZ&amp;id=41449077734&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2sM7aaFXXXXX8XpXXXXXXXXXX_!!279887075.jpg" width="990" height="260" /><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2273caFXXXXcyXXXXXXXXXXXX_!!279887075.jpg" width="990" height="261" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.16.yKmkTZ&amp;id=41450177151&amp;scene=taobao_shop" target="_blank"><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB28jv.aFXXXXa8XpXXXXXXXXXX_!!279887075.jpg" width="348" height="392" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.17.yKmkTZ&amp;id=41450177151&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2bCT.aFXXXXa8XpXXXXXXXXXX_!!279887075.jpg" width="346" height="392" /></a><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB2IFQdaFXXXXcxXXXXXXXXXXXX_!!279887075.jpg" width="296" height="392" /><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.17.yKmkTZ&amp;id=41450177151&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2n13caFXXXXcOXXXXXXXXXXXX_!!279887075.jpg" width="990" height="146" /></a><a href="http://detail.ju.taobao.com/home.htm?item_id=41065631171&amp;id=10000004001171&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB29nobaFXXXXXXXpXXXXXXXXXX_!!279887075.jpg" width="990" height="253" /><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2NMwiaFXXXXXBXXXXXXXXXXXX_!!279887075.jpg" width="990" height="270" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.13.yKmkTZ&amp;id=41464444352&amp;scene=taobao_shop" target="_blank"><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2hQsiaFXXXXXgXXXXXXXXXXXX_!!279887075.jpg" width="321" height="413" /></a><a href="http://detail.ju.taobao.com/home.htm?item_id=20180441844&amp;id=10000004000485&amp;scene=taobao_shop" target="_blank"><img src="http://img04.taobaocdn.com/imgextra/i4/279887075/TB2uUkgaFXXXXazXXXXXXXXXXXX_!!279887075.jpg" width="354" height="413" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.21.yKmkTZ&amp;id=41463816287&amp;scene=taobao_shop" target="_blank"><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2AVIiaFXXXXX4XXXXXXXXXXXX_!!279887075.jpg" width="315" height="413" /></a><img src="http://img03.taobaocdn.com/imgextra/i3/279887075/TB2toD_aFXXXXa.XpXXXXXXXXXX_!!279887075.jpg" width="468" height="734" usemap="#Map" border="0" /><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.12.yKmkTZ&amp;id=41465124093&amp;scene=taobao_shop" target="_blank"><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2UaZcaFXXXXcRXXXXXXXXXXXX_!!279887075.jpg" width="522" height="734" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.22.yKmkTZ&amp;id=41449397162&amp;scene=taobao_shop" target="_blank"><img src="http://img03.taobaocdn.com/imgextra/i3/279887075/TB2s0ZfaFXXXXa1XXXXXXXXXXXX_!!279887075.jpg" width="468" height="554" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.23.yKmkTZ&amp;id=41424706340&amp;scene=taobao_shop" target="_blank"><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB2MGAdaFXXXXb9XXXXXXXXXXXX_!!279887075.jpg" width="522" height="554" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.24.yKmkTZ&amp;id=12813425322&amp;rn=96380f2b459c599f09f852cbb7311f13&amp;scene=taobao_shop" target="_blank"><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB21Y3iaFXXXXXHXXXXXXXXXXXX_!!279887075.jpg" width="322" height="450" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.25.yKmkTZ&amp;id=41463464170&amp;scene=taobao_shop" target="_blank"><img src="http://img03.taobaocdn.com/imgextra/i3/279887075/TB2eFwdaFXXXXb3XXXXXXXXXXXX_!!279887075.jpg" width="353" height="450" /></a><a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.26.yKmkTZ&amp;id=19433902020&amp;rn=73c601da957c7aed1bbaf8b37aeaa782&amp;scene=taobao_shop" target="_blank"><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2wjwdaFXXXXbyXXXXXXXXXXXX_!!279887075.jpg" width="315" height="450" /></a><a href="http://luolai.tmall.com/?spm=a1z10.4.w5001-8146668560.5.zyjFQJ&scene=taobao_shop"><img src="http://img02.taobaocdn.com/imgextra/i2/279887075/TB2_gkiaFXXXXXzXXXXXXXXXXXX_!!279887075.jpg"/></a>
+</div>
+            </div>
+            </div>
+        <div id="load">loading:0%</div>
+        <div >
+       
+        
+
+     
+  </div>
+</div>
+
+<map name="Map" id="Map">
+  <area shape="rect" coords="0,2,464,546" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.15.yKmkTZ&amp;id=40486030887&amp;mt=&amp;scene=taobao_shop" target="_blank" />
+  <area shape="rect" coords="1,585,521,771" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5003-8955353685.22.yKmkTZ&amp;id=41449397162&amp;scene=taobao_shop" target="_blank" />
+</map>
+    </body>
+</html>
