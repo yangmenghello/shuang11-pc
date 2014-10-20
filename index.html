@@ -711,7 +711,7 @@ pg.gameStartBtnImg = {
 pg.gameSytxSendBaseAttr = {
     background : "send1",
     position   : "absolute",
-    top        : 298*pg.rate+"px",
+    top        : 290*pg.rate+"px",
     left       : 900*pg.rate+"px",
     width      : 120*pg.rate+"px",
     height     : 38*pg.rate+"px",
@@ -722,7 +722,21 @@ pg.gameSytxSendImg = {
     "0":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB23168aFXXXXaWXpXXXXXXXXXX_!!279887075.png",
     "1":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2AiIaaFXXXXcKXXXXXXXXXXXX_!!279887075.png"
 };
-
+//捕星星使用提醒_取消;
+pg.gameSytxBreakBaseAttr = {
+    background : "Break123",
+    position   : "absolute",
+    top        : 330*pg.rate+"px",
+    left       : 900*pg.rate+"px",
+    width      : 120*pg.rate+"px",
+    height     : 38*pg.rate+"px",
+    overflow:"hidden"
+};
+//捕星星星star_开始捕星星图片组
+pg.gameSytxBreakImg = {
+    "0":pg.imagesFile+"http://img02.taobaocdn.com/imgextra/i2/279887075/TB2V1oUaFXXXXcaXXXXXXXXXXXX_!!279887075.png",
+    "1":pg.imagesFile+"http://img03.taobaocdn.com/imgextra/i3/279887075/TB2c8ARaFXXXXXGXpXXXXXXXXXX_!!279887075.png"
+};
 
 /**
  * 节点获取
@@ -916,6 +930,8 @@ var ele = {
 					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2_cIaaFXXXXXaXpXXXXXXXXXX_!!279887075.jpg");
 				}else if(BaseAttr[s]=="cgzwyc1"){
 					sp2.setAttribute("src", "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2ZFkOaFXXXXbgXXXXXXXXXXXX_!!279887075.png");
+				}else if(BaseAttr[s]=="Break123"){
+					sp2.setAttribute("src", "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2V1oUaFXXXXcaXXXXXXXXXXXX_!!279887075.png");
 				}
 				/*
 				if(BaseAttr[s]=="bg"){
@@ -1501,6 +1517,23 @@ function Game(){
 	//使用提醒界面;
 	var gameOverSytx = ele.objSpan(pg.gameOverSytxBaseAttr);
     contentB.appendChild(gameOverSytx);
+	
+	var gameOverCGSytxBreak = ele.objSpan(pg.gameSytxBreakBaseAttr);
+    gameOverSytx.appendChild(gameOverCGSytxBreak);
+	gameOverCGSytxBreak.onmouseover=function(event){
+		gameOverCGSytxBreak.childNodes[0].src=pg.gameSytxBreakImg[1];
+		gameOverCGSytxBreak.style.cursor = "pointer";
+    }
+    gameOverCGSytxBreak.onmouseout=function(event){
+        gameOverCGSytxBreak.childNodes[0].src=pg.gameSytxBreakImg[0];
+		gameOverCGSytxBreak.style.cursor = "default";
+    }
+    gameOverCGSytxBreak.onmousedown = function (event){
+        //取消
+		gameOverCG.style.display="block";
+		gameOverSytx.style.display="none";
+    }
+	
 	var gameOverCGSytxSend = ele.objSpan(pg.gameSytxSendBaseAttr);
     gameOverSytx.appendChild(gameOverCGSytxSend);
 	gameOverCGSytxSend.onmouseover=function(event){
@@ -2254,7 +2287,7 @@ function Game(){
                 A.ajax({
                     type: "get",
                     dataType: "JSONP",
-                    url:"http://showcase.display.taobao.com/common/lottey.json?app=luolaitest&&ua="+getua,
+                    url:"http://showcase.display.taobao.com/common/lottey.json?app=luolaipc&&ua="+getua,
                     jsonpCallback: 'wewe',
 					cache:false,
                     success: function (data) {
@@ -2335,84 +2368,84 @@ function Game(){
 	});
 	function share1(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透#预售产品价格比双11还低，又是双鱼想太多？罗莱让爱幻想的双鱼座美梦成真即日起参加爆款预售比双11当天更便宜！【幻想双鱼座，白日梦成真】",
+	        comment: "#罗莱双11促销玩法大剧透#预售产品价格比双11还低，又是双鱼想太多？罗莱让爱幻想的双鱼座美梦成真即日起参加爆款预售比双11当天更便宜！【幻想双鱼座，白日梦成真】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2v03FaFXXXXaQXpXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share2(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 爱过怎能错过，好好收藏，表让想念变成怀念，提前收藏罗莱旗舰店，双11独家优惠一手掌握！【念旧巨蟹座，最爱搞收藏】",
+	        comment: "#罗莱双11促销玩法大剧透# 爱过怎能错过，好好收藏，表让想念变成怀念，提前收藏罗莱旗舰店，双11独家优惠一手掌握！【念旧巨蟹座，最爱搞收藏】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2v03FaFXXXXaQXpXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share3(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 门都抠成渣渣了，金牛们也不放过如何出招？快来罗莱旗舰店！多重优惠券，折上再折！【爱抠金牛座，尽享折上折】",
+	        comment: "#罗莱双11促销玩法大剧透# 门都抠成渣渣了，金牛们也不放过如何出招？快来罗莱旗舰店！多重优惠券，折上再折！【爱抠金牛座，尽享折上折】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img01.taobaocdn.com/imgextra/i1/279887075/TB20wEMaFXXXXa4XXXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share4(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 爱上就一定要买到，但是双11抢不到怎么破？提前放入购物车，爆款抢购先人一步！【专一天蝎座，记得提前购】",
+	        comment: "#罗莱双11促销玩法大剧透# 爱上就一定要买到，但是双11抢不到怎么破？提前放入购物车，爆款抢购先人一步！【专一天蝎座，记得提前购】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2eDMFaFXXXXapXpXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share5(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 摩羯不怕答题难，万水千山猜答案。竞猜双11爆款价，200元神秘礼品带回家！【稳重摩羯座，最爱猜价格】",
+	        comment: "#罗莱双11促销玩法大剧透# 摩羯不怕答题难，万水千山猜答案。竞猜双11爆款价，200元神秘礼品带回家！【稳重摩羯座，最爱猜价格】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img01.taobaocdn.com/imgextra/i1/279887075/TB2bucFaFXXXXa.XpXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share6(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 谁说白羊座的热情太猛烈？罗莱用礼完全hold住！只要参与店铺活动，会员专属四重福利，这个双11，我们一起占便宜！【热情白羊座，会员送送送】",
+	        comment: "#罗莱双11促销玩法大剧透# 谁说白羊座的热情太猛烈？罗莱用礼完全hold住！只要参与店铺活动，会员专属四重福利，这个双11，我们一起占便宜！【热情白羊座，会员送送送】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2ze7MaFXXXXa6XXXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share7(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 别再怪射手座最爱玩啦，这回双11就要派上大用场！10月20日到11月10日。来店铺玩捕星游戏，1111元大红包领回家！【爱玩射手座，捕星大行动】",
+	        comment: "#罗莱双11促销玩法大剧透# 别再怪射手座最爱玩啦，这回双11就要派上大用场！10月20日到11月10日。来店铺玩捕星游戏，1111元大红包领回家！【爱玩射手座，捕星大行动】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2TAoJaFXXXXckXXXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share8(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 双11罗莱太多福利怎么选？天秤们平时摇摆不定这次干脆摇个彻底！进入手机店铺玩“疯狂摇钱树”，千元红包唰唰落下，嗨到爆~【摇摆天秤座，摇出大红包】",
+	        comment: "#罗莱双11促销玩法大剧透# 双11罗莱太多福利怎么选？天秤们平时摇摆不定这次干脆摇个彻底！进入手机店铺玩“疯狂摇钱树”，千元红包唰唰落下，嗨到爆~【摇摆天秤座，摇出大红包】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img02.taobaocdn.com/imgextra/i2/279887075/TB2xoAFaFXXXXafXpXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share9(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 水瓶座们容易流泪，但有一种哭叫喜极而泣，罗莱11月1日起限时秒杀，连续十天嗨到底！【爱哭水瓶座，秒杀笑到cry】",
+	        comment: "#罗莱双11促销玩法大剧透# 水瓶座们容易流泪，但有一种哭叫喜极而泣，罗莱11月1日起限时秒杀，连续十天嗨到底！【爱哭水瓶座，秒杀笑到cry】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img04.taobaocdn.com/imgextra/i4/279887075/TB2QiEMaFXXXXaFXXXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share10(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 双11，什么才是处女座要的爱？必须是罗莱大免单！最完美的促销，最给力的优惠，献礼处女座~【完美处女座，快来满足我】",
+	        comment: "#罗莱双11促销玩法大剧透# 双11，什么才是处女座要的爱？必须是罗莱大免单！最完美的促销，最给力的优惠，献礼处女座~【完美处女座，快来满足我】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img02.taobaocdn.com/imgextra/i2/279887075/TB23bkKaFXXXXb0XXXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share11(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透# 谁才是真正的壕上壕？舍狮子座其谁！双11罗莱狂送壕礼，人人都来做朋友！【霸气狮子座，壕礼多到爆】",
+	        comment: "#罗莱双11促销玩法大剧透# 谁才是真正的壕上壕？舍狮子座其谁！双11罗莱狂送壕礼，人人都来做朋友！【霸气狮子座，壕礼多到爆】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img01.taobaocdn.com/imgextra/i1/279887075/TB26uZGaFXXXXXUXpXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
 	function share12(){
 	    mmShare1.show({
-	        comment: "#罗莱双11促销玩法大剧透#“我要买这个！”“我要买那个！”别吵啦！罗莱旗舰店有买还有赠，海量福袋买满就送！双子们也是醉了！【百变双子座，买一还要一】",
+	        comment: "#罗莱双11促销玩法大剧透#“我要买这个！”“我要买那个！”别吵啦！罗莱旗舰店有买还有赠，海量福袋买满就送！双子们也是醉了！【百变双子座，买一还要一】 http://www.tmall.com/market/alimama/luolai_pc.php",
 	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2aJMOaFXXXXXtXXXXXXXXXXXX_!!279887075.jpg"
 	    });
@@ -2420,8 +2453,8 @@ function Game(){
 	
 	function sharePic(){
 	    mmShare1.show({
-	        comment: "#莱*梦享世界#伙伴们，快点来抢罗莱双11百万红包啦，最高1111元店铺红包随便花*尽管花*放肆花。快来一起组团占便宜，秒杀土豪+详情猛戳【游戏链接】",
-	        title: "#莱*梦享世界#",
+	        comment: "#抢罗莱双11百万红包#伙伴们，快点来【罗莱家纺官方旗舰店】玩游戏抢红包啦，最高1111元游戏红包随便花*尽管花*放肆花。快来一起组团占便宜，秒杀土豪+详情猛戳  ",
+	        title: "罗莱双11促销玩法大剧透",
 	        pic: "http://img03.taobaocdn.com/imgextra/i3/279887075/TB2mLckaFXXXXX0XXXXXXXXXXXX_!!279887075.jpg"
 	    });
 	}
@@ -2498,6 +2531,29 @@ function Game(){
 </script>
 
  <style>
+ html{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	width:100%;
+	font-family:Verdana,simsun, Geneva, sans-serif;
+	}
+body{
+	width:100%;
+	height:100%;
+	margin:0px auto;
+	padding:0px;
+	font-family:Verdana,simsun, Geneva, sans-serif;
+}
+div,ul,li,p,table,img,dl,dd,dt,button{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	border:0px;
+	font-family:Verdana,simsun, Geneva, sans-serif;
+	
+}
+ 
  .cnrong{
 	background:url(http://img03.taobaocdn.com/imgextra/i3/279887075/TB2I..UaFXXXXalXXXXXXXXXXXX_!!279887075.jpg) no-repeat center top;
 	}
@@ -2601,18 +2657,20 @@ function Game(){
 .dshouji{
 	height:98px;
 	cursor:pointer;
-	background:url(http://img01.taobaocdn.com/imgextra/i1/279887075/TB29_QNaFXXXXbkXpXXXXXXXXXX_!!279887075.jpg) center no-repeat;
+	background:url(http://img03.taobaocdn.com/imgextra/i3/279887075/TB2uGETaFXXXXcNXXXXXXXXXXXX_!!279887075.jpg) center no-repeat;
 	margin-top:500px;}	
 	.diand{
 	display: block;
 	height:98px;}
+div,a,img{
+	border:0;
+	padding:0;
+	margin:0;}
 </style>
 </head>
     <body style="background: black;">
-        <div style="" >
-        
+        <div>
             <div id="content">
-            
             </div>
             <div class="dshouji"><a class="diand" onclick="sharePic();"></a></div>
             <div class="cnrong">
@@ -2658,7 +2716,8 @@ function Game(){
        <li class="fancont">
           <div class="pai zhengmian"><img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2HTZOaFXXXXX6XpXXXXXXXXXX_!!279887075.jpg" /></div>
           <div class="pai fangmian">
-            <img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2R6EUaFXXXXaxXXXXXXXXXXXX_!!279887075.jpg" />
+            <a href="http://bangpai.taobao.com/group/727277.htm?spm=a1z10.1.w5001-8146668560.14.RJZmDs&scene=taobao_shop" target="_blank">
+            <img src="http://img01.taobaocdn.com/imgextra/i1/279887075/TB2R6EUaFXXXXaxXXXXXXXXXXXX_!!279887075.jpg" /></a>
             <div class="dzang"><a class="dianji" onclick="voteCheck(6);" id="fanpic6"></a><a class="fanghui" onclick="share6();"></a></div>
           </div>
        </li>
@@ -2751,11 +2810,7 @@ function Game(){
 </div>
             </div>
         <div id="load">loading:0%</div>
-        <div >
-       
-        
-
-     
+        <div>
   </div>
 </div>
 
