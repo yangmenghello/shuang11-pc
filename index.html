@@ -42,7 +42,7 @@ pg.imagesObjArr=["http://img03.taobaocdn.com/imgextra/i3/279887075/TB2zun_aFXXXX
 //context对象
 pg.contentBaseAttr = {
     position   : "absolute",
-    top        : 124*pg.rate+"px",
+    top        : 168*pg.rate+"px",
     left       : 0*pg.rate+"px",
 	
     overflow:"hidden"
@@ -1612,6 +1612,8 @@ function Game(){
 		gameHand.style.display="block";
 		gameTime=500;
 		gameStart.style.display="none";
+		window.scrollTo(0,0);
+		document.documentElement.style.overflow='hidden';
     }
 	gameStart.style.display="none";
 	
@@ -1993,6 +1995,7 @@ function Game(){
 				gameHand.style.display="none";
 				gameOverSB.style.display="block";
 				gameOverSB.childNodes[0].src=pg.gameOverSBImg[0];
+				document.documentElement.style.overflow='';
 				//alert("游戏结束");
 			}
 		}
@@ -2387,6 +2390,7 @@ function Game(){
         }
 		
 		function chouJiang() {
+			document.documentElement.style.overflow='';
 			var getua = encodeURIComponent(getUA());
 			var A = jQuery;
                 A.ajax({
